@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MetaXuan Coin Transfer</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>MetaXuan Coin</h1>
+        <div class="wallet">
+            <button id="connect">Connect Wallet</button>
+            <p id="walletAddress"></p>
+        </div>
+        <div class="balance">
+            <h3>Balance: <span id="balance">0</span> MXN</h3>
+        </div>
+        <div class="transfer">
+            <input type="text" id="recipient" placeholder="Recipient Address"/>
+            <input type="number" id="amount" placeholder="Amount (MXN)"/>
+            <button id="send">Send</button>
+        </div>
+        <div class="status" id="status"></div>
+        <div class="price">
+            <h4>MXN/USDT Rate: <span id="rate">Loading...</span></h4>
+        </div>
+        <div class="history">
+            <h3>Transaction History</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
