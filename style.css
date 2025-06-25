@@ -1,53 +1,63 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: url("assets/metaxuan_logo.png") no-repeat center top;
+  height: 100%;
+}
+
+body {
+  background-image: url('assets/metaxuan_logo.jpg'); /* 你的底圖路徑 */
+  background-repeat: no-repeat;
   background-size: cover;
-  color: #ffd700;
+  background-position: top center;
+  font-family: 'Noto Sans Tibetan', sans-serif;
 }
 
+/* 主區塊樣式 */
 .container {
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 32px 24px;
+  border-radius: 12px;
+  width: 96%;
+  max-width: 420px;
+  margin: 160px auto 0 auto; /* 調整區塊垂直位置 */
+  backdrop-filter: blur(6px);
+  color: #FFD700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
-.container input, .container button {
-  display: block;
-  width: 100%;
-  padding: 10px;
+/* 標題樣式 */
+.container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* 輸入框與按鈕 */
+input, button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  padding: 12px;
   margin: 10px 0;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
-.container button {
-  background-color: #ffd700;
-  color: #000;
-  cursor: pointer;
+button {
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.tap-to-start {
-  text-align: center;
-  margin-top: 40vh;
+button:hover {
+  background: rgba(255, 215, 0, 0.2);
 }
 
-.tap-to-start button {
-  font-size: 20px;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  background-color: rgba(255, 215, 0, 0.8);
-  color: #000;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
+/* input 內的 placeholder */
+input::placeholder {
+  color: #FFD700;
 }
-
 @media (min-width: 768px) {
   .tap-to-start {
     display: none;
