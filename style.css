@@ -1,8 +1,9 @@
 body {
   background-image: url("assets/metaxuan_logo.png");
   background-size: cover;
-  background-position: center;
+  background-position: contain */;
   background-repeat: no-repeat;
+  background-attachment: fixed; /*
   font-family: sans-serif;
   color: #f5f5f5;
 }
