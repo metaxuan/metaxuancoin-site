@@ -1,0 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&family=Cinzel:wght@700&display=swap');
+
+body {
+  font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+  color: #f0f0f0;
+  background-color: #001f0f;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1.logo {
+  font-family: 'Cinzel', 'Noto Sans TC', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: gold;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+p span {
+  font-family: 'Noto Sans TC', 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #ebebeb;
+}
+
+#mantra {
+  font-family: 'Noto Serif TC', 'Noto Sans TC', serif;
+  font-size: 1.25rem;
+  text-align: center;
+  letter-spacing: 1px;
+  color: gold;
+  margin: 2rem 1rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  max-width: 480px;
+  margin: 2rem auto;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .card {
+    width: 100%;
+  }
+  h1.logo {
+    font-size: 1.8rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
