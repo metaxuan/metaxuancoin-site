@@ -1,78 +1,56 @@
 body {
+  background-image: url('assets/metaxuan_logo.png');
+  background-size: cover;
+  background-position: center 30px; /* 稍微下移 */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+  color: #FFD700;
   margin: 0;
   padding: 0;
-  background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
-  color: gold;
 }
 
-/* 手機版底部輸入區 */
-@media screen and (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .form-container {
-    width: 100%;
-    max-width: 90%;
-    margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 10px;
-  }
-
-  input, button {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: transparent;
-    color: gold;
-    border: 1px solid gold;
-    border-radius: 5px;
-  }
-
-  button {
-    background-color: rgba(255, 215, 0, 0.2);
-  }
+.container {
+  background: rgba(0, 0, 0, 0.2); /* 提高透明度 */
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  margin: 60px auto;
+  backdrop-filter: blur(8px);
+  color: #FFD700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
 
-/* 電腦版底圖下移並保持滿版 */
-@media screen and (min-width: 769px) {
+input, button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFD700;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #FFD700;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #FFD700;
+}
+
+h1, h2, h3, h4 {
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
   body {
-    background-position: center 80px;
+    background-size: cover;
+    background-position: center 60px; /* 行動版再下移一點 */
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 120px;
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  .form-container {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 30px;
-    border-radius: 10px;
-    color: gold;
-  }
-
-  input, button {
-    width: 400px;
-    padding: 10px;
-    margin: 10px 0;
-    background: transparent;
-    color: gold;
-    border: 1px solid gold;
-    border-radius: 5px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.15); /* 行動版更淡 */
   }
 }
