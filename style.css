@@ -9,7 +9,7 @@ body {
   background-image: url('assets/metaxuan_logo.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: center -50px;
   font-family: 'Noto Sans Tibetan', sans-serif;
 }
 
@@ -19,7 +19,7 @@ body {
   border-radius: 12px;
   width: 90%;
   max-width: 420px;
-  margin: 80px auto;
+  margin: 150px auto 0 auto;
   backdrop-filter: blur(6px);
   color: #FFD700;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
