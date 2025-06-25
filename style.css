@@ -43,6 +43,8 @@ input::placeholder {
   }
   .container {
     margin: 40px auto;
-    background: rgba(0, 0, 0, 0.3);
+  .input-container input:hover,
+  .input-container button:hover {
+    background: rgba(0, 0, 0, 0.1);
   }
 }
