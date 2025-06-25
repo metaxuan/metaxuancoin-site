@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MetaXuan Coin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>MetaXuan Coin</h1>
+    <button onclick="connectWallet()">Connect Wallet</button>
+    <p><strong>Balance:</strong> <span id="balance">0 MXN</span></p>
+    <input type="text" id="recipient" placeholder="Recipient Address" />
+    <input type="number" id="amount" placeholder="Amount (MXN)" />
+    <button onclick="sendTokens()">Send</button>
+    <p>MXN/USDT Rate: 2.34</p>
+    <p><strong>Transaction History</strong></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
