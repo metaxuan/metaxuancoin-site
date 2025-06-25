@@ -1,56 +1,62 @@
+/* 載入 Google 字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Tibetan&display=swap');
+
 body {
   background-image: url('assets/metaxuan_logo.png');
-  background-size: cover;
-  background-position: center 30px; /* 稍微下移 */
+  background-size: cover;               /* 滿版 */
+  background-position: center 80px;     /* 向下偏移 */
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: 'Noto Serif Tibetan', 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Serif Tibetan', serif;
   color: #FFD700;
   margin: 0;
   padding: 0;
 }
 
+/* 框體容器 */
 .container {
-  background: rgba(0, 0, 0, 0.2); /* 提高透明度 */
+  background: rgba(0, 0, 0, 0.25);       /* 更淡透明度 */
+  backdrop-filter: blur(12px);          /* 加強模糊感 */
+  color: #FFD700;
   padding: 24px;
   border-radius: 12px;
   width: 90%;
   max-width: 420px;
-  margin: 60px auto;
-  backdrop-filter: blur(8px);
-  color: #FFD700;
+  margin: 80px auto;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  text-align: center;
 }
 
-input, button {
+/* 輸入欄位與按鈕 */
+input,
+button {
   background: rgba(255, 255, 255, 0.05);
   color: #FFD700;
-  padding: 10px;
-  margin-top: 10px;
   border: 1px solid #FFD700;
-  border-radius: 6px;
+  padding: 12px;
+  margin-top: 10px;
   width: 100%;
-  font-size: 16px;
+  border-radius: 6px;
+  font-family: 'Noto Serif Tibetan', serif;
 }
 
 input::placeholder {
   color: #FFD700;
 }
 
-h1, h2, h3, h4 {
-  color: #FFD700;
-}
-
+/* 手機版調整 */
 @media (max-width: 768px) {
   body {
     background-size: cover;
-    background-position: center 60px; /* 行動版再下移一點 */
+    background-position: center 60px;
   }
 
   .container {
-    margin-top: auto;
-    margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.15); /* 行動版更淡 */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.15);   /* 更淡版本 */
+    box-shadow: none;
   }
 }
