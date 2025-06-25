@@ -19,24 +19,73 @@
         <div id="status"></div>
     </div>
     <script>
-        async function connect() {
-            if (typeof window.ethereum === 'undefined') {
-                alert('請安裝 MetaMask');
-                return;
-            }
-            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            account = accounts[0];
-            document.getElementById("address").innerText = account;
-        }
+       async function sendToken() {
+  const to = document.getElementById("to").value;
+  const amount = document.getElementById("amount").value;
+  const decimals = await contract.decimals();
+  const value = ethers.utils.parseUnits(amount, decimals);
 
-        async function sendToken() {
-            document.getElementById("status").innerText = "⏳ 處理中...";
-            setTimeout(() => {
-                document.getElementById("status").innerText = "✅ 模擬轉帳完成！（實際請部署合約程式碼）";
-            }, 2000);
-        }
+  document.getElementById("status").innerText = "⏳ 處理中...";
 
-        window.addEventListener('load', connect);
-    </script>
+  try {
+    const tx = await contract.transfer(to, value);
+    await tx.wait();
+    document.getElementById("status").innerText = "✅ 傳送成功！";
+  } catch (err) {
+    document.getElementById("status").innerText = "❌ 發送失敗：" + err.message;
+  }
+}
+<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+<script>
+  const tokenAddress = "0x8CCAe437408C07A54a1b574894E2C541160Bbfed"; // MXN 合約地址
+  const tokenABI = [
+    // 簡化後的 ERC20 ABI
+    "function balanceOf(address) view returns (uint)",
+    "function transfer(address to, uint amount) returns (bool)",
+    "function decimals() view returns (uint8)"
+  ];
+
+  let provider, signer, contract;
+
+  async function connect() {
+    if (typeof window.ethereum === 'undefined') {
+      alert("請安裝 MetaMask");
+      return;
+    }
+
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    await provider.send("eth_requestAccounts", []);
+    signer = provider.getSigner();
+
+    const address = await signer.getAddress();
+    document.getElementById("address").innerText = address;
+
+    contract = new ethers.Contract(tokenAddress, tokenABI, signer);
+
+    const balanceRaw = await contract.balanceOf(address);
+    const decimals = await contract.decimals();
+    const balance = ethers.utils.formatUnits(balanceRaw, decimals);
+    document.getElementById("balance").innerText = balance + " MXN";
+  }
+
+  async function sendToken() {
+    const to = document.getElementById("to").value;
+    const amount = document.getElementById("amount").value;
+    const decimals = await contract.decimals();
+    const value = ethers.utils.parseUnits(amount, decimals);
+
+    document.getElementById("status").innerText = "⏳ 處理中...";
+
+    try {
+      const tx = await contract.transfer(to, value);
+      await tx.wait();
+      document.getElementById("status").innerText = "✅ 傳送成功";
+    } catch (err) {
+      document.getElementById("status").innerText = "❌ 失敗：" + err.message;
+    }
+  }
+
+  window.addEventListener('load', connect);
+</script>
 </body>
 </html>
