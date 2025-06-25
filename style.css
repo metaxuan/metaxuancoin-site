@@ -1,0 +1,62 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-image: url('assets/metaxuan_logo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    background-attachment: fixed;
+    font-family: 'Noto Sans Tibetan', sans-serif;
+    background-color: #000;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 32px 24px;
+    border-radius: 12px;
+    width: 96%;
+    max-width: 420px;
+    margin: 160px auto 0 auto;
+    backdrop-filter: blur(6px);
+    color: #FFD700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+input, button {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain;
+        background-position: top center;
+        background-attachment: scroll;
+    }
+
+    .container {
+        margin: 120px auto 40px auto;
+        background: rgba(0, 0, 0, 0.25);
+    }
+}
