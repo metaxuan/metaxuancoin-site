@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("assets/metaxuan_logo.png") no-repeat center top;
+  background-size: cover;
+  color: #ffd700;
+}
+
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container input, .container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.container button {
+  background-color: #ffd700;
+  color: #000;
+  cursor: pointer;
+}
+
+.tap-to-start {
+  text-align: center;
+  margin-top: 40vh;
+}
+
+.tap-to-start button {
+  font-size: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 215, 0, 0.8);
+  color: #000;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 768px) {
+  .tap-to-start {
+    display: none;
+  }
+  #formContainer {
+    display: block !important;
+  }
+}
