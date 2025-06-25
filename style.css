@@ -1,0 +1,52 @@
+
+body {
+  background-image: url('assets/metaxuan_logo.png');
+  background-size: cover;
+  background-position: center 150px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Noto Serif Tibetan', serif;
+  color: #FFDF00;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for wallet UI */
+.container {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  margin: 80px auto;
+  backdrop-filter: blur(8px);
+  color: #FFDF00;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+input, button {
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFDF00;
+  border: 1px solid #FFDF00;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 6px;
+}
+
+::placeholder {
+  color: #FFDF00;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+    background-position: center 150px;
+  }
+
+  .container {
+    margin: 40px auto;
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
