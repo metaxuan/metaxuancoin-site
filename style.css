@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-  background-image: url('assets/metaxuan_logo.jpg'); /* 你的底圖路徑 */
+  background-image: url('assets/metaxuan_logo.png'); /* 你的底圖路徑 */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
