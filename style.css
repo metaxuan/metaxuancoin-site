@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.6);        /* 較透的黑色底 */
+  background: rgba(0, 0, 0, 0.95);        /* 較透的黑色底 */
   padding: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
