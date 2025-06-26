@@ -1,25 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaXuan Coin 轉帳介面</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tibetan&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MetaXuan Coin</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-  <h1 class="main-title">玄元幣 / MetaXuan Coin</h1>
-  <p class="sub-title">轉帳介面 / Transfer Interface</p>
+  <div class="container">
+    <h1 class="main-title">玄元幣 / MetaXuan Coin</h1>
+    <h2 class="subtitle">轉帳介面 / Transfer Interface</h2>
 
-  <label for="recipient">接收地址 / Recipient Address</label>
-  <input type="text" id="recipient" placeholder="請輸入接收地址 / Enter recipient address">
+    <button id="toggleButton" class="toggle-button">開始轉帳 / Start Transfer</button>
 
-  <label for="amount">轉帳金額 / Amount</label>
-  <input type="number" id="amount" placeholder="請輸入金額 / Enter amount">
+    <div id="formSection" class="form-section hidden">
+      <label for="recipient"><strong>接收地址 / Recipient Address</strong></label>
+      <input type="text" id="recipient" placeholder="請輸入接收地址 / Enter recipient address">
 
-  <button>轉帳 / Send</button>
-</div>
+      <label for="amount"><strong>轉帳金額 / Amount</strong></label>
+      <input type="text" id="amount" placeholder="請輸入金額 / Enter amount">
+
+      <button id="sendButton" class="send-button">轉帳 / Send</button>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleButton');
+    const formSection = document.getElementById('formSection');
+
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    function updateVisibility() {
+      if (!isMobile()) {
+        formSection.classList.remove('hidden');
+        toggleBtn.style.display = 'none';
+      } else {
+        formSection.classList.add('hidden');
+        toggleBtn.style.display = 'block';
+      }
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      formSection.classList.toggle('hidden');
+    });
+
+    window.addEventListener('resize', updateVisibility);
+    window.addEventListener('load', updateVisibility);
+  </script>
 </body>
 </html>
