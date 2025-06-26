@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MetaXuan Coin</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
 </head>
 <body>
   <div class="top-bar">
-    <select id="language-select">
-      <option value="en">🇬🇧 EN</option>
-      <option value="zh-TW">🇹🇼 繁中</option>
-      <option value="zh-CN">🇨🇳 简中</option>
-      <option value="es">🇪🇸 ES</option>
-      <option value="ja">🇯🇵 日本語</option>
-      <option value="ko">🇰🇷 한국어</option>
-      <option value="th">🇹🇭 ไทย</option>
-    </select>
+    <div class="language-selector">
+      <select id="language" onchange="changeLanguage()">
+        <option value="en">🇬🇧 EN</option>
+        <option value="zh-TW">🇹🇼 繁中</option>
+        <option value="zh-CN">🇨🇳 简中</option>
+        <option value="ja">🇯🇵 日本語</option>
+        <option value="ko">🇰🇷 한국어</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="th">🇹🇭 ไทย</option>
+      </select>
+    </div>
   </div>
 
-  <div class="logo-area">
-    <img src="assets/metaxuan_logo.png" alt="MetaXuan Logo" class="logo-img" />
-    <h1 class="main-title">MetaXuan Coin</h1>
+  <div class="container" id="transferSection" style="display: none;">
+    <h1 id="title">玄元幣 / MetaXuan Coin</h1>
+
+    <label id="label-address">接收地址 / Recipient Address</label>
+    <input type="text" id="recipient" placeholder="請輸入接收地址 / Enter recipient address">
+
+    <label id="label-amount">轉帳金額 / Amount</label>
+    <input type="number" id="amount" placeholder="請輸入金額 / Enter amount">
+
+    <button id="send" onclick="sendTransaction()">轉帳 / Send</button>
+    <button id="back" onclick="goBack()">← 返回 / Back</button>
+
+    <p id="wallet-balance"></p>
   </div>
 
-  <button id="start-btn" class="start-button">開始轉帳 / Start Transfer</button>
-
-  <div id="transfer-interface" class="hidden">
-    <h2 id="transfer-title">轉帳介面 / Transfer Interface</h2>
-    <label id="recipient-label">接收地址 / Recipient Address</label><br/>
-    <input type="text" id="recipient" placeholder="請輸入地址 / Enter address" /><br/>
-    <label id="amount-label">轉帳金額 / Amount</label><br/>
-    <input type="number" id="amount" placeholder="請輸入金額 / Enter amount" /><br/>
-    <button id="send-btn">轉帳 / Send</button><br/>
-    <button id="back-btn">返回 / Back</button>
-  </div>
+  <button id="startBtn" onclick="showTransferSection()">開始轉帳 / Start Transfer</button>
 
   <script src="script.js"></script>
 </body>
