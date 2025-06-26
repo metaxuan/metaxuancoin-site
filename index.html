@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MetaXuan Coin</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- transfer interface hidden by default -->
+  <!-- 輸入介面 -->
   <div class="container" id="transfer-section" style="display: none;">
     <div class="input-group">
       <label>接收地址 / Recipient Address</label>
-      <input type="text" placeholder="請輸入接收地址 / Enter recipient address">
+      <input type="text" placeholder="請輸入接收地址 / Enter recipient address" />
     </div>
     <div class="input-group">
       <label>轉帳金額 / Amount</label>
-      <input type="number" placeholder="請輸入金額 / Enter amount">
+      <input type="number" placeholder="請輸入金額 / Enter amount" />
     </div>
     <button class="send-btn">轉帳 / Send</button>
+    <button id="backBtn" class="back-btn">返回 / Back</button>
   </div>
 
-  <!-- button fixed at bottom center -->
-  <div class="bottom-button-container">
+  <!-- 主畫面按鈕 -->
+  <div class="bottom-button-container" id="startBtnContainer">
     <button id="startTransferBtn">開始轉帳 / Start Transfer</button>
   </div>
 
   <script>
-    // 顯示輸入欄位並隱藏按鈕
-    document.getElementById("startTransferBtn").addEventListener("click", function() {
-      document.getElementById("transfer-section").style.display = "block";
-      this.style.display = "none";
+    const startBtn = document.getElementById("startTransferBtn");
+    const backBtn = document.getElementById("backBtn");
+    const transferSection = document.getElementById("transfer-section");
+    const startBtnContainer = document.getElementById("startBtnContainer");
+
+    startBtn.addEventListener("click", function () {
+      transferSection.style.display = "block";
+      startBtnContainer.style.display = "none";
+    });
+
+    backBtn.addEventListener("click", function () {
+      transferSection.style.display = "none";
+      startBtnContainer.style.display = "block";
     });
   </script>
 
