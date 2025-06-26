@@ -3,11 +3,8 @@ body {
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
   background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
-  background-size: 300px auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: lighten;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-size: cover; /* ✅ 讓整張圖鋪滿背景 */
+  background-color: #000; /* ✅ 若圖片透明區域，顯示黑底 */
   height: 100vh;
   color: #FFD700;
   overflow-x: hidden;
