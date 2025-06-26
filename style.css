@@ -2,12 +2,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
-  background: url('assets/metaxuan_logo.png') center center no-repeat;
-  background-size: contain;  /* 原圖大小不被拉伸 */
-  background-attachment: fixed;
+  background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
+  background-size: 300px auto;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #000;  /* 避免上下白邊 */
+  background-position: center;
+  background-blend-mode: lighten;
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100vh;
   color: #FFD700;
   overflow-x: hidden;
@@ -19,13 +19,13 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.language-selector {
+.top-bar {
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
   padding: 4px 6px;
   animation: fadeInRight 1s ease-out;
 }
@@ -71,12 +71,10 @@ body {
   background: rgba(0, 0, 0, 0.65);
   padding: 24px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 90%;
   margin: 80px auto;
   text-align: center;
   animation: fadeInUp 1s ease-out;
-  z-index: 10;
-  position: relative;
 }
 
 @keyframes fadeInUp {
@@ -89,29 +87,18 @@ h1 {
   margin-bottom: 24px;
 }
 
-.input-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.input-group {
-  flex: 1 1 300px;
-  max-width: 360px;
-}
-
 label {
   display: block;
   margin-top: 16px;
   margin-bottom: 6px;
   font-size: 16px;
-  text-align: left;
 }
 
 input {
   width: 100%;
+  max-width: 340px;
   padding: 12px 16px;
+  margin: 10px auto;
   border: 1px solid #FFD700;
   border-radius: 10px;
   background: rgba(255,255,255,0.1);
@@ -145,16 +132,7 @@ button:hover {
   color: #FFD700;
 }
 
-/* 成功提示樣式 */
-#transfer-success {
-  display: none;
-  color: #00FF99;
-  font-size: 18px;
-  margin-top: 20px;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-/* 錯誤提示樣式 */
+/* ⛔ 錯誤提示樣式 */
 .error-message {
   display: none;
   color: #ff4d4f;
@@ -163,7 +141,7 @@ button:hover {
   animation: shake 0.3s ease-in-out;
 }
 
-/* 成功提示樣式 */
+/* ✅ 成功提示樣式 */
 .success-message {
   display: none;
   color: #00e676;
@@ -172,7 +150,7 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Loading 提示樣式 */
+/* ⏳ Loading 樣式 */
 .loading-message {
   display: none;
   color: #ffd700;
@@ -182,7 +160,7 @@ button:hover {
   animation: blink 1.5s linear infinite;
 }
 
-/* 錯誤抖動動畫 */
+/* 🚨 shake 動畫 */
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
@@ -191,20 +169,36 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* loading 閃爍動畫 */
+/* ✨ blink loading 動畫 */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-/* 響應式手機設計 */
-@media screen and (max-width: 600px) {
-  .input-grid {
-    flex-direction: column;
-    gap: 12px;
-  }
+/* 📱 手機版樣式 */
+@media screen and (max-width: 480px) {
   input, button {
     width: 90%;
     font-size: 15px;
+  }
+}
+
+/* 🖥️ 桌機版樣式 */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 480px;
+    margin-top: 100px;
+    padding: 32px 48px;
+    border-radius: 16px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 24px;
   }
 }
