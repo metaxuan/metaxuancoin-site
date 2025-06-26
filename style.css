@@ -56,10 +56,12 @@ input::placeholder {
   }
 
   .container h1 {
-    font-size: 1.4rem; /* 調小主標題 */
+    font-size: 1.5rem; /* 調小主標題 */
     margin-bottom: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
+    text-align: center;
   }
+}
 
   .container h2 {
     font-size: 1rem;
