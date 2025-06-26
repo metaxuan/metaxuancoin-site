@@ -265,6 +265,10 @@ function sendTransaction() {
 
   alert(`模擬轉帳成功：\nTo: ${recipient}\nAmount: ${amount} MXN`);
 }
+document.getElementById("transfer-success").style.display = "block";
+setTimeout(() => {
+  document.getElementById("transfer-success").style.display = "none";
+}, 5000); // 5 秒後自動隱藏
 
 window.addEventListener("DOMContentLoaded", () => {
   const userLang = navigator.language || navigator.userLanguage;
