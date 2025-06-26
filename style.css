@@ -202,3 +202,50 @@ button:hover {
     padding: 14px 24px;
   }
 }
+/* 背景中央浮水印設定，防止裁切 */
+body {
+  background: none;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60vmin;
+  height: 60vmin;
+  background: url('assets/metaxuan_logo.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.08;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 將 container 拉到前景 */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 桌機版雙欄輸入欄位排列 */
+@media screen and (min-width: 768px) {
+  .input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .input-grid .input-group {
+    text-align: left;
+  }
+
+  .input-grid label {
+    font-weight: bold;
+    margin-left: 8px;
+  }
+}
