@@ -1,122 +1,105 @@
-/* 全域設定 */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #000;
+  font-family: 'Noto Sans', 'Noto Sans Tibetan', sans-serif;
 }
 
 body {
-  background-image: url('assets/metaxuan_logo.png'); /* 替換為實際路徑 */
+  background-image: url('assets/metaxuan_logo.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top center;
-  background-attachment: fixed;
-  font-family: 'Noto Sans Tibetan', sans-serif;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 30px;
 }
 
-/* 主容器 */
 .container {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(6px);
-  padding: 32px 24px;
-  border-radius: 16px;
-  width: 90%;
+  padding: 20px 24px;
+  border-radius: 12px;
+  width: 96%;
   max-width: 420px;
-  margin: 160px auto 40px auto;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   text-align: center;
   color: #FFD700;
 }
 
-/* 主標題與副標題 */
 .main-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #FFD700;
-  margin-bottom: 0.4em;
-  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px;
 }
 
-.sub-title {
+.subtitle {
   font-size: 1rem;
-  font-weight: normal;
   color: #FFD700;
-  margin-bottom: 1.2em;
+  margin-bottom: 20px;
 }
 
-/* 表單欄位與按鈕 */
-input, button {
+input {
   background: rgba(255, 255, 255, 0.05);
-  color: #FFD700;
-  font-size: 1rem;
-  padding: 12px;
-  width: 100%;
+  color: #fff;
   border: 1px solid #FFD700;
   border-radius: 6px;
-  margin-bottom: 16px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
   box-sizing: border-box;
+  font-size: 0.9rem;
 }
 
 input::placeholder {
   color: #ccc;
 }
 
-button {
-  background-color: #FFD700;
-  color: #000;
+.send-button {
+  background: #FFD700;
+  color: black;
   font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  width: auto;
-  padding: 12px 24px;
-  display: inline-block;
-}
-
-button:hover {
-  background-color: #ffe03a;
-}
-
-/* 標籤文字 */
-label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 4px;
-  text-align: left;
-  color: #FFD700;
-}
-
-/* 語言切換（可選） */
-.lang-switch {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  color: #FFD700;
+  margin-top: 10px;
   font-size: 0.9rem;
-  cursor: pointer;
 }
 
-/* 響應式：手機版調整 */
+.toggle-button {
+  background: #FFD700;
+  color: black;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 手機版細節微調 */
 @media (max-width: 768px) {
-  body {
-    background-size: cover;
-    background-position: top center;
-  }
-
   .main-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
-  .sub-title {
-    font-size: 0.95rem;
+  .subtitle {
+    font-size: 0.9rem;
   }
 
-  button {
-    font-size: 1rem;
-    padding: 10px 16px;
+  input, .send-button {
+    font-size: 0.9rem;
   }
 
-  .container {
-    margin-top: 120px;
-    margin-bottom: 32px;
+  .send-button {
+    width: fit-content;
+    padding: 10px 20px;
   }
 }
