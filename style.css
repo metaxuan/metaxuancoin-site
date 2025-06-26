@@ -2,76 +2,85 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
-  background: url('assets/metaxuan_logo.png') no-repeat center top;
+  background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   color: #FFD700;
+  overflow-x: hidden;
 }
 
 .top-bar {
-  position: absolute;
+  position: fixed;
   top: 10px;
   right: 10px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 4px 6px;
 }
 
 #language-select {
-  font-size: 16px;
-  padding: 4px 8px;
+  font-size: 14px;
+  padding: 6px 8px;
   border-radius: 8px;
+  border: none;
 }
 
 .logo-area {
   text-align: center;
-  margin-top: 100px;
+  padding-top: 120px;
 }
 
 .main-title {
-  font-size: 28px;
+  font-size: 24px;
   color: #FFD700;
-  margin-bottom: 30px;
+  margin-top: 12px;
 }
 
 .start-button {
   position: fixed;
-  bottom: 40px;
+  bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 14px 28px;
-  font-size: 18px;
-  font-weight: bold;
   background-color: #FFD700;
   color: black;
+  font-size: 16px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
 }
 
 #transfer-interface {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
+  padding: 24px;
   border-radius: 12px;
-  max-width: 320px;
-  margin: 80px auto;
-  padding: 20px;
+  max-width: 90%;
+  margin: 40px auto;
   text-align: center;
 }
 
 #transfer-interface input {
   width: 90%;
-  margin: 8px 0;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
   border: 1px solid #FFD700;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: white;
 }
 
 #transfer-interface button {
   margin-top: 12px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: #FFD700;
   color: black;
   border: none;
   border-radius: 6px;
   font-weight: bold;
-}
-
-.hidden {
-  display: none;
 }
