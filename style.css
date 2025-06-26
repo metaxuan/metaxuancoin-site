@@ -141,6 +141,54 @@ button:hover {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* 錯誤提示樣式 */
+.error-message {
+  display: none;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: shake 0.3s ease-in-out;
+}
+
+/* 成功提示樣式 */
+.success-message {
+  display: none;
+  color: #00e676;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Loading 提示樣式 */
+.loading-message {
+  display: none;
+  color: #ffd700;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: blink 1.5s linear infinite;
+}
+
+/* 🔁 錯誤抖動動畫 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* ✅ 成功淡入動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ⏳ loading 閃爍動畫 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
 
 /* 響應式設計 */
 @media screen and (max-width: 480px) {
