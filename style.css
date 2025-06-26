@@ -1,31 +1,77 @@
 body {
-  background-image: url('assets/metaxuan_logo.png');
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('assets/metaxuan_logo.png') no-repeat center top;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-color: #000; /* 背景顏色不要太灰 */
+  height: 100vh;
+  color: #FFD700;
 }
 
-.header select {
-  font-size: 18px;
-  padding: 6px 12px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #aaa;
-  margin: 10px;
+.top-bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-/* 開始轉帳按鈕放置在底部中間 */
-.bottom-button {
+#language-select {
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.logo-area {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.main-title {
+  font-size: 28px;
+  color: #FFD700;
+  margin-bottom: 30px;
+}
+
+.start-button {
   position: fixed;
-  bottom: 50px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   padding: 14px 28px;
   font-size: 18px;
+  font-weight: bold;
   background-color: #FFD700;
+  color: black;
   border: none;
   border-radius: 12px;
+}
+
+#transfer-interface {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  max-width: 320px;
+  margin: 80px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#transfer-interface input {
+  width: 90%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #FFD700;
+}
+
+#transfer-interface button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
