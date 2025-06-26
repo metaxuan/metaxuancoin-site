@@ -1,114 +1,31 @@
 body {
-  margin: 0;
-  font-family: 'Noto Sans TC', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s;
+  background-image: url('assets/metaxuan_logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #000; /* 背景顏色不要太灰 */
 }
 
-:root {
-  --bg-color: #111;
-  --text-color: #fff;
-  --accent-color: gold;
+.header select {
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #aaa;
+  margin: 10px;
 }
 
-.light-theme {
-  --bg-color: #f5f5f5;
-  --text-color: #222;
-}
-
-.container {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  padding: 1em;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.2;
-  z-index: -1;
-}
-
-.header {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
+/* 開始轉帳按鈕放置在底部中間 */
 .bottom-button {
   position: fixed;
-  bottom: 1em;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0.8em 1.5em;
-  background: var(--accent-color);
+  padding: 14px 28px;
+  font-size: 18px;
+  background-color: #FFD700;
   border: none;
-  color: #000;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.card {
-  margin-top: 5vh;
-  padding: 1.5em;
-  background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card label {
-  display: block;
-  margin-top: 1em;
-  font-weight: bold;
-}
-
-.card input {
-  width: 100%;
-  padding: 0.5em;
-  border: 1px solid var(--accent-color);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--text-color);
-}
-
-.send-btn {
-  margin-top: 1em;
-  width: 100%;
-  background: var(--accent-color);
-  color: #000;
-  border: none;
-  padding: 0.8em;
-  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.back-btn {
-  margin-top: 0.5em;
-  width: 100%;
-  background: transparent;
-  color: var(--text-color);
-  border: 1px solid var(--accent-color);
-  padding: 0.5em;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.wallet-info {
-  font-size: 0.85em;
-  margin-bottom: 1em;
-  color: var(--accent-color);
-}
-
-.hidden {
-  display: none;
 }
