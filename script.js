@@ -256,19 +256,26 @@ async function updateWalletDisplay() {
 function sendTransaction() {
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
+  const errorEl = document.getElementById("transfer-error");
+  const loadingEl = document.getElementById("transfer-loading");
+  const successEl = document.getElementById("transfer-success");
+
+  // Reset all messages
+  errorEl.style.display = "none";
+  loadingEl.style.display = "block";
+  successEl.style.display = "none";
 
   if (!web3.utils.isAddress(recipient)) {
-    alert("地址格式不正確 / Invalid address format");
+    loadingEl.style.display = "none";
+    errorEl.style.display = "block";
     return;
   }
 
-  alert(`模擬轉帳成功：\nTo: ${recipient}\nAmount: ${amount} MXN`);
-
-  // 顯示轉帳成功提示
-  document.getElementById("transfer-success").style.display = "block";
   setTimeout(() => {
-    document.getElementById("transfer-success").style.display = "none";
-  }, 5000);
+    loadingEl.style.display = "none";
+    successEl.style.display = "block";
+    console.log(`轉帳成功 To: ${recipient}, Amount: ${amount} MXN`);
+  }, 1500); // 模擬延遲
 }
 
 window.addEventListener("DOMContentLoaded", () => {
