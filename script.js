@@ -254,6 +254,7 @@ async function updateWalletDisplay() {
 }
 
 function sendTransaction() {
+  document.getElementById("transfer-success").style.display = "block";
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
 
