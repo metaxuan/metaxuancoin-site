@@ -56,8 +56,9 @@ input::placeholder {
   }
 
   .container h1 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+    font-size: 1.4rem; /* 調小主標題 */
+    margin-bottom: 16px;
+    line-height: 1.5;
   }
 
   .container h2 {
@@ -71,18 +72,23 @@ input::placeholder {
     display: block;
   }
 
-  input, button {
+  input {
     font-size: 0.95rem;
     padding: 10px 12px;
-    height: auto;
     width: 100%;
     margin-bottom: 12px;
   }
 
   button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
     background-color: #FFD700;
     color: #000;
     font-weight: bold;
     border-radius: 6px;
+    border: none;
   }
 }
