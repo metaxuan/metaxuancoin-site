@@ -17,7 +17,7 @@ const translations = {
   },
   "zh-TW": {
     "start": "開始轉帳",
-    "title": "玄元幣 / MetaXuan Coin",
+    "title": "玄元幣",
     "address": "接收地址",
     "amount": "轉帳金額",
     "enterAddress": "請輸入接收地址",
@@ -33,7 +33,7 @@ const translations = {
   },
   "zh-CN": {
     "start": "开始转账",
-    "title": "玄元币 / MetaXuan Coin",
+    "title": "玄元币",
     "address": "接收地址",
     "amount": "转账金额",
     "enterAddress": "请输入接收地址",
@@ -121,23 +121,24 @@ const tokenABI = [
   { "constant": true, "inputs": [{"name":"_owner","type":"address"}], "name": "balanceOf", "outputs": [{"name":"balance","type":"uint256"}], "type": "function" },
   { "constant": true, "inputs": [], "name": "decimals", "outputs": [{"name":"","type":"uint8"}], "type": "function" }
 ];
+
 function changeLanguage() {
   const lang = document.getElementById("language").value;
   currentLang = lang;
   const t = translations[lang] || translations["en"];
-  const en = translations["en"];
 
   document.getElementById("startBtn").innerText = t.start;
   document.getElementById("title").innerText = t.title;
-  document.getElementById("label-address").innerText = `${t.address} / ${en.address}`;
-  document.getElementById("recipient").placeholder = `${t.enterAddress} / ${en.enterAddress}`;
-  document.getElementById("label-amount").innerText = `${t.amount} / ${en.amount}`;
-  document.getElementById("amount").placeholder = `${t.enterAmount} / ${en.enterAmount}`;
-  document.getElementById("send").innerText = `${t.send} / ${en.send}`;
-  document.getElementById("back").innerText = `← ${t.back} / ${en.back}`;
+  document.getElementById("label-address").innerText = t.address;
+  document.getElementById("recipient").placeholder = t.enterAddress;
+  document.getElementById("label-amount").innerText = t.amount;
+  document.getElementById("amount").placeholder = t.enterAmount;
+  document.getElementById("send").innerText = t.send;
+  document.getElementById("back").innerText = `← ${t.back}`;
 
   updateWalletDisplay();
 }
+
 function showTransferSection() {
   document.getElementById("startBtn").style.display = "none";
   document.getElementById("transferSection").style.display = "block";
@@ -163,6 +164,7 @@ async function connectWallet() {
     alert("MetaMask not detected");
   }
 }
+
 async function updateWalletDisplay() {
   if (!web3 || !selectedAccount) {
     document.getElementById("wallet-balance").innerText = translations[currentLang].connect;
@@ -186,6 +188,7 @@ async function updateWalletDisplay() {
     document.getElementById("wallet-balance").innerText = "Error loading balances";
   }
 }
+
 function sendTransaction() {
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
