@@ -79,7 +79,23 @@ input::placeholder {
   margin-bottom: 10px;
   font-size: 0.9rem;
 }
+#toggleTransfer {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
+#toggleTransfer:hover {
+  transform: scale(1.05);
+}
 .hidden {
   display: none;
 }
