@@ -272,11 +272,47 @@ function sendTransaction() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  const userLang = navigator.language || navigator.userLanguage;
+  const langRaw = navigator.language || navigator.userLanguage; // 例如 "zh-TW"、"en-US"
+  const langShort = langRaw.split('-')[0]; // 例如 "zh"、"en"
   const supportedLangs = Object.keys(translations);
-  const defaultLang = supportedLangs.includes(userLang) ? userLang : "en";
+
+  // 判斷使用者語言是否被支援
+  let defaultLang = "en";
+  if (supportedLangs.includes(langRaw)) {
+    defaultLang = langRaw;
+  } else if (supportedLangs.includes(langShort)) {
+    defaultLang = langShort;
+  }
+
+  // 套用語言
   document.getElementById("language").value = defaultLang;
+  currentLang = defaultLang;
   changeLanguage();
 
+  // 顯示提示
+  const notice = document.createElement("div");
+  notice.innerText = `🔤 語言已自動切換為：${translations[defaultLang].title || defaultLang}`;
+  notice.style.position = "fixed";
+  notice.style.bottom = "20px";
+  notice.style.left = "50%";
+  notice.style.transform = "translateX(-50%)";
+  notice.style.background = "rgba(0, 0, 0, 0.7)";
+  notice.style.color = "#FFD700";
+  notice.style.padding = "10px 16px";
+  notice.style.borderRadius = "10px";
+  notice.style.fontSize = "14px";
+  notice.style.zIndex = "999";
+  notice.style.animation = "fadeIn 0.5s ease-in-out";
+
+  document.body.appendChild(notice);
+
+  // 幾秒後自動消失
+  setTimeout(() => {
+    notice.style.transition = "opacity 0.5s";
+    notice.style.opacity = 0;
+    setTimeout(() => notice.remove(), 600);
+  }, 2500);
+
+  // 點錢包餘額即可連接
   document.getElementById("wallet-balance").addEventListener("click", connectWallet);
 });
