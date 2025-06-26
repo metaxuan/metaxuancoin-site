@@ -3,7 +3,11 @@ body {
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
   background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
-  background-size: cover;
+  background-size: 300px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: lighten;
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100vh;
   color: #FFD700;
   overflow-x: hidden;
@@ -128,20 +132,7 @@ button:hover {
   color: #FFD700;
 }
 
-/* 成功提示樣式 */
-#transfer-success {
-  display: none;
-  color: #00FF99;
-  font-size: 18px;
-  margin-top: 20px;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-/* 錯誤提示樣式 */
+/* ⛔ 錯誤提示樣式 */
 .error-message {
   display: none;
   color: #ff4d4f;
@@ -150,7 +141,7 @@ button:hover {
   animation: shake 0.3s ease-in-out;
 }
 
-/* 成功提示樣式 */
+/* ✅ 成功提示樣式 */
 .success-message {
   display: none;
   color: #00e676;
@@ -159,7 +150,7 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Loading 提示樣式 */
+/* ⏳ Loading 樣式 */
 .loading-message {
   display: none;
   color: #ffd700;
@@ -169,7 +160,7 @@ button:hover {
   animation: blink 1.5s linear infinite;
 }
 
-/* 🔁 錯誤抖動動畫 */
+/* 🚨 shake 動畫 */
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
@@ -178,37 +169,36 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* ✅ 成功淡入動畫 */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ⏳ loading 閃爍動畫 */
+/* ✨ blink loading 動畫 */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-/* 響應式設計 */
+/* 📱 手機版樣式 */
 @media screen and (max-width: 480px) {
   input, button {
     width: 90%;
     font-size: 15px;
   }
 }
-/* ✅ 浮水印 logo 淡化效果 */
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  background: url('assets/metaxuan_logo.png') no-repeat center center;
-  background-size: contain;
-  opacity: 0.05;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  pointer-events: none;
+
+/* 🖥️ 桌機版樣式 */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 480px;
+    margin-top: 100px;
+    padding: 32px 48px;
+    border-radius: 16px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
 }
