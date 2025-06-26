@@ -1,4 +1,3 @@
-
 const translations = {
   "en": {
     "start": "Start Transfer",
@@ -37,12 +36,11 @@ const translations = {
 let currentLang = "en";
 let selectedAccount = null;
 let web3 = null;
-const tokenAddress = "0x8CCAe437408C07A54a1b574894E2C541160Bbfed"; // MXN 合約
+const tokenAddress = "0x8CCAe437408C07A54a1b574894E2C541160Bbfed";
 const tokenABI = [
   { "constant": true, "inputs": [{"name":"_owner","type":"address"}], "name": "balanceOf", "outputs": [{"name":"balance","type":"uint256"}], "type": "function" },
   { "constant": true, "inputs": [], "name": "decimals", "outputs": [{"name":"","type":"uint8"}], "type": "function" }
 ];
-
 function changeLanguage() {
   const lang = document.getElementById("language").value;
   currentLang = lang;
@@ -60,7 +58,6 @@ function changeLanguage() {
 
   updateWalletDisplay();
 }
-
 function showTransferSection() {
   document.getElementById("startBtn").style.display = "none";
   document.getElementById("transferSection").style.display = "block";
@@ -86,7 +83,6 @@ async function connectWallet() {
     alert("MetaMask not detected");
   }
 }
-
 async function updateWalletDisplay() {
   if (!web3 || !selectedAccount) {
     document.getElementById("wallet-balance").innerText = translations[currentLang].connect;
@@ -110,7 +106,6 @@ async function updateWalletDisplay() {
     document.getElementById("wallet-balance").innerText = "Error loading balances";
   }
 }
-
 function sendTransaction() {
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
