@@ -4,83 +4,72 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
   color: #FFD700;
-  overflow-x: hidden;
 }
 
 .top-bar {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  padding: 4px 6px;
 }
 
-#language-select {
-  font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 8px;
+.language-selector select {
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 10px;
   border: none;
 }
 
-.logo-area {
+.container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 90%;
+  margin: 60px auto;
   text-align: center;
-  padding-top: 120px;
 }
 
-.main-title {
-  font-size: 24px;
-  color: #FFD700;
-  margin-top: 12px;
+.container label,
+.container input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
-.start-button {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #FFD700;
+}
+
+button {
   background-color: #FFD700;
   color: black;
-  font-size: 16px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
+  padding: 12px 24px;
   font-weight: bold;
-  z-index: 5;
-}
-
-.hidden {
-  display: none;
-}
-
-#transfer-interface {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 24px;
-  border-radius: 12px;
-  max-width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
-
-#transfer-interface input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #FFD700;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.1);
-  color: white;
-}
-
-#transfer-interface button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
   margin-top: 12px;
-  padding: 10px 20px;
-  background: #FFD700;
-  color: black;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  cursor: pointer;
+}
+
+#startBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
+
+  #startBtn {
+    font-size: 1.2rem;
+    padding: 14px 32px;
+  }
 }
