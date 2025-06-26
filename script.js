@@ -77,7 +77,80 @@ const translations = {
     "balance": "ยอดคงเหลือกระเป๋า"
   }
 };
+const titleEl = document.getElementById("main-title");
 
+const translations = {
+  en: {
+    title: "MetaXuan Coin",
+    recipient: "Recipient Address",
+    amount: "Amount",
+    send: "Send",
+    back: "← Back",
+    start: "Start Transfer"
+  },
+  zh: {
+    title: "玄元幣 ",
+    recipient: "接收地址",
+    amount: "轉帳金額",
+    send: "轉帳",
+    back: "← 返回",
+    start: "開始轉帳"
+  },
+  zh_cn: {
+    title: "玄元币 ",
+    recipient: "接收地址",
+    amount: "转账金额",
+    send: "转账",
+    back: "← 返回",
+    start: "开始转账"
+  },
+  es: {
+    title: "MetaXuan Moneda",
+    recipient: "Dirección del destinatario",
+    amount: "Cantidad",
+    send: "Enviar",
+    back: "← Atrás",
+    start: "Iniciar Transferencia"
+  },
+  ja: {
+    title: "メタシュアンコイン",
+    recipient: "受信者アドレス",
+    amount: "金額",
+    send: "送信",
+    back: "← 戻る",
+    start: "送金を開始"
+  },
+  ko: {
+    title: "메타쉔 코인",
+    recipient: "수신자 주소",
+    amount: "금액",
+    send: "보내기",
+    back: "← 뒤로가기",
+    start: "전송 시작"
+  },
+  th: {
+    title: "เมตาเสวียนคอยน์",
+    recipient: "ที่อยู่ผู้รับ",
+    amount: "จำนวน",
+    send: "ส่ง",
+    back: "← กลับ",
+    start: "เริ่มโอน"
+  }
+};
+
+document.getElementById("language-select").addEventListener("change", (e) => {
+  const lang = e.target.value;
+  const t = translations[lang];
+
+  if (t) {
+    titleEl.textContent = t.title;
+    document.getElementById("recipient-label").textContent = t.recipient;
+    document.getElementById("amount-label").textContent = t.amount;
+    document.getElementById("send-btn").textContent = `${t.send}`;
+    document.getElementById("back-btn").textContent = `${t.back}`;
+    document.getElementById("start-btn").textContent = `${t.start}`;
+  }
+});
 function changeLanguage() {
   const lang = document.getElementById("language").value;
   document.getElementById("startBtn").innerText = translations[lang].start;
