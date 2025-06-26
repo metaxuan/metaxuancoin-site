@@ -254,7 +254,6 @@ async function updateWalletDisplay() {
 }
 
 function sendTransaction() {
-  document.getElementById("transfer-success").style.display = "block";
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
 
@@ -264,11 +263,13 @@ function sendTransaction() {
   }
 
   alert(`模擬轉帳成功：\nTo: ${recipient}\nAmount: ${amount} MXN`);
+
+  // 顯示轉帳成功提示
+  document.getElementById("transfer-success").style.display = "block";
+  setTimeout(() => {
+    document.getElementById("transfer-success").style.display = "none";
+  }, 5000);
 }
-document.getElementById("transfer-success").style.display = "block";
-setTimeout(() => {
-  document.getElementById("transfer-success").style.display = "none";
-}, 5000); // 5 秒後自動隱藏
 
 window.addEventListener("DOMContentLoaded", () => {
   const userLang = navigator.language || navigator.userLanguage;
