@@ -1,95 +1,104 @@
-/* 全局設定 */
-body {
+/* RESET & FONT */
+html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans', sans-serif;
+  height: 100%;
+  font-family: 'Noto Sans Tibetan', sans-serif;
+}
+
+body {
   background-image: url('assets/metaxuan_logo.png');
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
-  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFD700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 60px;
+  position: relative;
+}
+
+/* 輸入介面 */
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  backdrop-filter: blur(8px);
+}
+
+/* 輸入欄位 */
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
   color: #FFD700;
 }
 
-/* 標題 */
-.title-section {
-  text-align: center;
-  padding-top: 30px;
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #FFD700;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 15px;
 }
 
-.title-section h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* 開始轉帳按鈕 */
-#toggleTransfer {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
-  font-size: 1rem;
+/* 送出按鈕 */
+.send-btn {
+  width: 100%;
+  padding: 12px;
   background-color: #FFD700;
-  color: black;
+  color: #000;
   border: none;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 12px;
 }
 
-/* 轉帳區域 */
-.container {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  width: 90%;
-  max-width: 420px;
-  margin: 120px auto;
-  padding: 24px;
-  border-radius: 10px;
-  animation: fadeIn 0.6s ease;
-}
-
-.container label {
-  display: block;
-  margin: 10px 0 4px;
-  font-size: 0.9rem;
-}
-
-.container input {
+/* 返回按鈕 */
+.back-btn {
   width: 100%;
   padding: 10px;
-  margin-bottom: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
+  background-color: transparent;
   border: 1px solid #FFD700;
-  border-radius: 5px;
-  font-size: 0.95rem;
-}
-
-#sendButton {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #FFD700;
-  color: black;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  color: #FFD700;
+  border-radius: 8px;
+  font-size: 14px;
   cursor: pointer;
 }
 
-/* 動畫 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+/* 底部置中的開始按鈕 */
+.bottom-button-container {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 1000;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#startTransferBtn {
+  background-color: #FFD700;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
