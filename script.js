@@ -17,7 +17,7 @@ const translations = {
   },
   "zh-TW": {
     "start": "開始轉帳",
-    "title": "玄元幣 / MetaXuan Coin",
+    "title": "玄元幣 ",
     "address": "接收地址",
     "amount": "轉帳金額",
     "enterAddress": "請輸入接收地址",
@@ -33,7 +33,7 @@ const translations = {
   },
   "zh-CN": {
     "start": "开始转账",
-    "title": "玄元币 / MetaXuan Coin",
+    "title": "玄元币 ",
     "address": "接收地址",
     "amount": "转账金额",
     "enterAddress": "请输入接收地址",
