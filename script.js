@@ -336,9 +336,18 @@ function toggleVision() {
 
 function showVision() {
   const vision = document.getElementById("vision");
-  if (vision) {
-    vision.style.display = "block";
-    vision.scrollIntoView({ behavior: "smooth" });
+  const btn = document.getElementById("showVisionBtn");
+
+  if (vision && btn) {
+    // 切換顯示與隱藏
+    if (vision.style.display === "none" || vision.style.display === "") {
+      vision.style.display = "block";
+      vision.scrollIntoView({ behavior: "smooth" });
+      btn.innerText = "🔙 返回 / Back";
+    } else {
+      vision.style.display = "none";
+      btn.innerText = "🌍 觀看願景 / View Vision";
+    }
   }
 }
 
