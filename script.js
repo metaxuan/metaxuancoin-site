@@ -323,3 +323,13 @@ window.addEventListener("DOMContentLoaded", () => {
   // 點錢包餘額即可連接
   document.getElementById("wallet-balance").addEventListener("click", connectWallet);
 });
+
+function toggleVision() {
+  const visionEl = document.getElementById("vision");
+  if (visionEl.style.display === "none" || visionEl.style.display === "") {
+    visionEl.style.display = "block";
+    applyVisionTranslation(currentLang); // 切換時套用語言
+  } else {
+    visionEl.style.display = "none";
+  }
+}
