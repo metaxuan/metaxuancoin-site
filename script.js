@@ -1,3 +1,16 @@
+// 願景文案的語系翻譯支援
+const translations = {
+  "zh-TW": {
+    "vision.short": "觀察世間聲音，並以其慈悲心和智慧來幫助眾生。",
+    ...
+  },
+  "en": {
+    "vision.short": "Listen to the voices of the world, and help with compassion and wisdom.",
+    ...
+  },
+  ...
+}
+
 const translations = {
   "en": {
     "start": "Start Transfer",
