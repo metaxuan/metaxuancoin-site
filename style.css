@@ -218,6 +218,7 @@ button:hover {
 }
 /* 📌 讓願景內容置中 */
 .vision-section {
+  display: block; /* ✅ 確保它有顯示 */
   position: absolute;
   top: 50%;
   left: 50%;
