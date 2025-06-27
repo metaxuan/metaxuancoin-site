@@ -55,6 +55,19 @@ body {
   animation: pulseBtn 2s infinite;
 }
 
+#showVisionBtn {
+  font-size: 14px;
+  padding: 8px 16px;
+  max-width: 240px;
+  width: auto;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 12px;
+  margin-left: 12px;
+  border-radius: 10px;
+  z-index: 3;
+}
+
 @keyframes pulseBtn {
   0%, 100% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.05); }
