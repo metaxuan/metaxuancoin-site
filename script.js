@@ -343,10 +343,10 @@ function showVision() {
     if (vision.style.display === "none" || vision.style.display === "") {
       vision.style.display = "block";
       vision.scrollIntoView({ behavior: "smooth" });
-      btn.innerText = "🔙 返回 / Back";
+      btn.innerText = "🔙 返回 ";
     } else {
       vision.style.display = "none";
-      btn.innerText = "🌍 觀看願景 / View Vision";
+      btn.innerText = "🌍 觀看願景 ";
     }
   }
 }
