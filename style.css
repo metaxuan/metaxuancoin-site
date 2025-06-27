@@ -179,19 +179,6 @@ button:hover {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 768px) {
-  .vision-section {
-    margin-top: 100px; /* 避開語言選單 */
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
-
-  .vision-section p {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-}
-
 
 /* 🖥️ 桌機版樣式 */
 @media screen and (min-width: 768px) {
@@ -211,17 +198,4 @@ button:hover {
     font-size: 18px;
     padding: 14px 24px;
   }
-}
-.vision-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 960px;
-  margin: 60px auto;
-  padding: 32px 20px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 16px;
-  color: #FFD700;
 }
