@@ -323,3 +323,28 @@ window.addEventListener("DOMContentLoaded", () => {
   // 點錢包餘額即可連接
   document.getElementById("wallet-balance").addEventListener("click", connectWallet);
 });
+
+// 願景文案的語系翻譯支援
+const translations = {
+  "zh-TW": {
+    "vision.short": "觀察世間聲音，並以其慈悲心和智慧來幫助眾生。",
+    ...
+  },
+  "en": {
+    "vision.short": "Listen to the voices of the world, and help with compassion and wisdom.",
+    ...
+  },
+  ...
+}
+// 願景文案的語系翻譯支援
+const translations = {
+  "zh-TW": {
+    "vision.short": "觀察世間聲音，並以其慈悲心和智慧來幫助眾生。",
+    ...
+  },
+  "en": {
+    "vision.short": "Listen to the voices of the world, and help with compassion and wisdom.",
+    ...
+  },
+  ...
+}
