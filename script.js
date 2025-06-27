@@ -333,3 +333,12 @@ function toggleVision() {
     visionEl.style.display = "none";
   }
 }
+
+function showVision() {
+  const vision = document.getElementById("vision");
+  if (vision) {
+    vision.style.display = "block";
+    vision.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
