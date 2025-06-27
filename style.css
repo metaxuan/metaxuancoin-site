@@ -187,9 +187,10 @@ button:hover {
 
 /* 📱 手機版樣式 */
 @media screen and (max-width: 480px) {
-  input, button {
-    width: 90%;
-    font-size: 15px;
+  #showVisionBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+    max-width: 200px;
   }
 }
 
