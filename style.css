@@ -56,14 +56,14 @@ body {
 }
 
 #showVisionBtn {
-  font-size: 16px;
-  padding: 8px 16px;
-  max-width: 240px;
+  font-size: 14px;
+  padding: 6px 12px;
+  max-width: 180px;   /* ✅ 縮小寬度 */
   width: auto;
   white-space: nowrap;
-  position: relative;
-  margin-top: 12px;
-  margin-left: 12px;
+  position: absolute; /* ✅ 調整為絕對定位 */
+  top: 10px;           /* ✅ 確保不會擋到語言選單 */
+  left: 10px;
   border-radius: 10px;
   z-index: 3;
 }
