@@ -179,6 +179,19 @@ button:hover {
     font-size: 15px;
   }
 }
+@media screen and (max-width: 768px) {
+  .vision-section {
+    margin-top: 100px; /* 避開語言選單 */
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .vision-section p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+
 
 /* 🖥️ 桌機版樣式 */
 @media screen and (min-width: 768px) {
