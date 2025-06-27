@@ -3,8 +3,8 @@ body {
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
   background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
-  background-size: cover; /* ✅ 讓整張圖鋪滿背景 */
-  background-color: #000; /* ✅ 若圖片透明區域，顯示黑底 */
+  background-size: cover;
+  background-color: #000;
   height: 100vh;
   color: #FFD700;
   overflow-x: hidden;
@@ -58,11 +58,11 @@ body {
 #showVisionBtn {
   font-size: 14px;
   padding: 6px 12px;
-  max-width: 220px;   /* ✅ 縮小寬度 */
+  max-width: 220px;
   width: auto;
   white-space: nowrap;
-  position: absolute; /* ✅ 調整為絕對定位 */
-  top: 10px;           /* ✅ 確保不會擋到語言選單 */
+  position: absolute;
+  top: 10px;
   left: 10px;
   border-radius: 10px;
   z-index: 3;
@@ -142,7 +142,25 @@ button:hover {
   color: #FFD700;
 }
 
-/* ⛔ 錯誤提示樣式 */
+/* 🌍 願景區塊樣式 */
+.vision-section {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  color: #FFD700;
+}
+
+.vision-section p {
+  font-size: 18px;
+  margin: 16px auto;
+  line-height: 1.6;
+}
+
 .error-message {
   display: none;
   color: #ff4d4f;
@@ -151,7 +169,6 @@ button:hover {
   animation: shake 0.3s ease-in-out;
 }
 
-/* ✅ 成功提示樣式 */
 .success-message {
   display: none;
   color: #00e676;
@@ -160,7 +177,6 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* ⏳ Loading 樣式 */
 .loading-message {
   display: none;
   color: #ffd700;
@@ -170,7 +186,6 @@ button:hover {
   animation: blink 1.5s linear infinite;
 }
 
-/* 🚨 shake 動畫 */
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
@@ -179,22 +194,24 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* ✨ blink loading 動畫 */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-/* 📱 手機版樣式 */
 @media screen and (max-width: 480px) {
   #showVisionBtn {
     font-size: 13px;
     padding: 6px 12px;
     max-width: 200px;
   }
+
+  .vision-section p {
+    font-size: 16px;
+    padding: 0 12px;
+  }
 }
 
-/* 🖥️ 桌機版樣式 */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 480px;
