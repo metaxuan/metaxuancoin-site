@@ -278,7 +278,7 @@ button:hover {
 }
 /* 📌 願景模式調整（需搭配 JS 操作 body class） */
 body.showing-vision #startBtn {
-  bottom: 100px; /* ✅ 開始轉帳再往下 */
+  bottom: 150px; /* ✅ 開始轉帳再往下 */
 }
 
 body.showing-vision #back {
