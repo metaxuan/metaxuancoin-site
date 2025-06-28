@@ -311,6 +311,6 @@ button:hover {
 /* 桌機字體再稍大一些 */
 @media screen and (min-width: 768px) {
   .vision-tagline h2 {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
