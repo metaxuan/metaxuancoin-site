@@ -41,7 +41,7 @@ body {
 
 #startBtn {
   position: absolute;
-  bottom: 48px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, #ffd700, #ffaa00);
@@ -185,7 +185,6 @@ button:hover {
   50% { opacity: 0.4; }
 }
 
-/* Mobile */
 @media screen and (max-width: 480px) {
   #showVisionBtn {
     font-size: 13px;
@@ -197,18 +196,17 @@ button:hover {
     background: rgba(0, 0, 0, 0.7);
     padding: 16px;
     border-radius: 10px;
-    margin: 80px 16px 16px 16px;
+    margin: 100px 16px 16px 16px;
     text-align: left;
   }
 
   .vision-section p {
     font-size: 15.5px;
     line-height: 1.75;
-    margin-bottom:12px;
+    margin-bottom: 12px;
   }
 }
 
-/* Desktop */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 700px;
@@ -230,9 +228,12 @@ button:hover {
   .vision-tagline h2 {
     font-size: 32px;
   }
+
+  .vision-section {
+    margin-top: 120px;
+  }
 }
 
-/* Vision text layout */
 .vision-short p,
 .vision-medium p,
 .vision-long p {
@@ -267,7 +268,7 @@ button:hover {
   padding: 24px;
   border-radius: 16px;
   max-width: 720px;
-  margin: 80px auto 60px auto;
+  margin: 100px auto 60px auto;
   color: #FFD700;
   text-align: left;
   animation: fadeInUp 1s ease-out;
