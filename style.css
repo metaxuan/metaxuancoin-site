@@ -288,3 +288,24 @@ button:hover {
     font-size: 14px;
   }
 }
+/* 願景標語置中樣式：電腦與手機皆適用 */
+.vision-tagline {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.vision-tagline h2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin: 0 auto;
+  display: inline-block;
+  color: #FFD700;
+}
+
+/* 桌機字體再稍大一些 */
+@media screen and (min-width: 768px) {
+  .vision-tagline h2 {
+    font-size: 24px;
+  }
+}
