@@ -338,7 +338,7 @@ function showVision() {
   function showVision() {
   document.getElementById('vision').style.display = 'block';
   document.getElementById('transferSection').style.display = 'none';
-  document.getElementById('startBtn').style.display = 'none';
+  document.getElementById('startBtn').classList.add('btn-lower');
   document.getElementById('vision').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
