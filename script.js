@@ -350,4 +350,44 @@ function showVision() {
     }
   }
 }
+const visionTranslations = {
+  "en": {
+    "btn": "🌍 View Vision",
+    "short": "To listen to the voices of the world with compassion and wisdom.",
+    "medium": "MetaXuan Coin is a bridge of kindness...",
+    "long": "MetaXuan Coin is a global decentralized asset..."
+  },
+  "zh-TW": {
+    "btn": "🌍 觀看願景",
+    "short": "傾聽世間的聲音，並以慈悲與智慧...",
+    "medium": "玄元幣是一道連接人心的光...",
+    "long": "玄元幣（MetaXuan Coin）是一項全球性..."
+  }
+};
 
+function changeLanguage() {
+  const lang = document.getElementById("language").value;
+  const t = translations[lang] || translations["en"];
+  const vt = visionTranslations[lang] || visionTranslations["en"];
+
+  document.getElementById("startBtn").innerText = t.start;
+  document.getElementById("title").innerText = t.title;
+  document.getElementById("label-address").innerText = t.address;
+  document.getElementById("recipient").placeholder = t.enterAddress;
+  document.getElementById("label-amount").innerText = t.amount;
+  document.getElementById("amount").placeholder = t.enterAmount;
+  document.getElementById("send").innerText = t.send;
+  document.getElementById("back").innerText = `← ${t.back}`;
+  document.getElementById("showVisionBtn").innerText = vt.btn;
+  document.getElementById("vision-short").innerText = vt.short;
+  document.getElementById("vision-medium").innerText = vt.medium;
+  document.getElementById("vision-long").innerText = vt.long;
+}
+
+function showVision() {
+  const vision = document.getElementById("vision");
+  const btn = document.getElementById("showVisionBtn");
+  const isHidden = vision.style.display === "none" || vision.style.display === "";
+  vision.style.display = isHidden ? "block" : "none";
+  changeLanguage(); // Refresh content
+}
