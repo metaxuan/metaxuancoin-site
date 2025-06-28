@@ -310,6 +310,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("language").value = defaultLang;
   currentLang = defaultLang;
   changeLanguage();
+  applyVisionTranslation(lang);
 
   // 顯示提示
   const notice = document.createElement("div");
