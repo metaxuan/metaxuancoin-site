@@ -273,4 +273,5 @@ button:hover {
   animation: fadeInUp 1s ease-out;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
   word-break: break-word;
+  padding-top: 60px;
 }
