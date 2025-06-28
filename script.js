@@ -214,9 +214,7 @@ function changeLanguage() {
   document.getElementById("amount").placeholder = t.enterAmount;
   document.getElementById("send").innerText = t.send;
   document.getElementById("back").innerText = `← ${t.back}`;
-
-  applyVisionTranslation(lang);  // ✅ 在這裡加上這一行，讓願景文也會跟著切換語言
-  updateWalletDisplay();         // ✅ 原本就有的
+   updateWalletDisplay();         // ✅ 原本就有的
 }
 
 function showTransferSection() {
