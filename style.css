@@ -192,7 +192,21 @@ button:hover {
     padding: 6px 12px;
     max-width: 200px;
   }
+
+  .vision-section {
+    background: rgba(0, 0, 0, 0.7);  /* ✅ 背景半透明 */
+    padding: 16px;
+    border-radius: 10px;
+    margin: 80px 16px 16px 16px;
+    text-align: left;
+  }
+
+  .vision-section p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
 }
+
 
 /* 🖥️ 桌機版樣式 */
 @media screen and (min-width: 768px) {
