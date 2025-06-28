@@ -176,6 +176,20 @@ const translations = {
     "tokenBalance": "MXN शेष"
   }
 };
+  "en": {
+    "btn": "🌍 View Vision",
+    "short": "To listen to the voices of the world with compassion and wisdom.",
+    "medium": "MetaXuan Coin is a bridge of kindness, allowing goodwill to flow freely across borders. We believe every gentle force can change a corner of the world.",
+    "long": "MetaXuan Coin is a global decentralized asset dedicated to fair resource allocation and transparent charity. Inspired by the mantra 'ॐ मणि पद्मे हूं', we use blockchain to ensure every act of kindness is seen, recorded, and amplified for lasting impact."
+  },
+  "zh-TW": {
+    "btn": "🌍 觀看願景",
+    "short": "傾聽世間的聲音，並以慈悲與智慧，回應每一份需要。",
+    "medium": "玄元幣是一道連接人心的光，讓全球的善意無國界地流動。我們相信，每一份溫柔的力量，都能改變世界的角落。",
+    "long": "玄元幣（MetaXuan Coin）是一項全球性去中心化資產，致力於促進公平的資源分配與慈善透明。我們以六字大明咒「ॐ मणि पद्मे हूं」的精神為靈感，結合區塊鏈技術，讓每一筆善意都被看見、被記錄、被放大，為全球弱勢族群建立可持續支持的能量網絡。"
+  },
+};
+
 
 let currentLang = "en";
 let selectedAccount = null;
@@ -190,6 +204,7 @@ function changeLanguage() {
   const lang = document.getElementById("language").value;
   currentLang = lang;
   const t = translations[lang] || translations["en"];
+  applyVisionTranslation(lang);
 
   document.getElementById("startBtn").innerText = t.start;
   document.getElementById("title").innerText = t.title;
@@ -228,6 +243,21 @@ async function connectWallet() {
     alert("MetaMask not detected");
   }
 }
+function showVision() {
+  const vision = document.getElementById("vision");
+  const btn = document.getElementById("showVisionBtn");
+
+  const isHidden = vision.style.display === "none" || vision.style.display === "";
+  if (isHidden) {
+    vision.style.display = "block";
+    btn.innerText = visionTranslations[currentLang]?.btn || "🔙 Back";
+    applyVisionTranslation(currentLang); // 套用願景文翻譯
+    vision.scrollIntoView({ behavior: "smooth", block: "center" });
+  } else {
+    vision.style.display = "none";
+    btn.innerText = visionTranslations[currentLang]?.btn || "🌍 View Vision";
+  }
+}
 
 async function updateWalletDisplay() {
   if (!web3 || !selectedAccount) {
@@ -259,6 +289,15 @@ function sendTransaction() {
   const errorEl = document.getElementById("transfer-error");
   const loadingEl = document.getElementById("transfer-loading");
   const successEl = document.getElementById("transfer-success");
+
+function applyVisionTranslation(lang) {
+  const vt = visionTranslations[lang] || visionTranslations["en"];
+  document.getElementById("showVisionBtn").innerText = vt.btn;
+  document.querySelector(".vision-short p").innerText = vt.short;
+  document.querySelector(".vision-medium p").innerText = vt.medium;
+  document.querySelector(".vision-long p").innerText = vt.long;
+}
+
 
   // Reset all messages
   errorEl.style.display = "none";
