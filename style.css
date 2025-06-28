@@ -276,3 +276,14 @@ button:hover {
   word-break: break-word;
   padding-top: 60px;
 }
+/* 📌 願景模式調整（需搭配 JS 操作 body class） */
+body.showing-vision #startBtn {
+  bottom: 100px; /* ✅ 開始轉帳再往下 */
+}
+
+body.showing-vision #back {
+  position: fixed;
+  top: 12px;     /* ✅ 往上靠近畫面上緣 */
+  left: 12px;
+  z-index: 20;   /* ✅ 優先顯示層級 */
+}
