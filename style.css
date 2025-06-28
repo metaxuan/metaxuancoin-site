@@ -207,8 +207,9 @@ button:hover {
   }
 
   .vision-section p {
-    font-size: 14px;
-    line-height: 1.8;
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom:12px;
   }
 }
 
