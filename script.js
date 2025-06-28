@@ -1,4 +1,19 @@
 const translations = {
+  const visionTranslations = {
+  "en": {
+    "btn": "🌍 View Vision",
+    "short": "To listen to the voices of the world with compassion and wisdom.",
+    "medium": "MetaXuan Coin is a bridge of kindness, allowing goodwill to flow freely across borders. We believe every gentle force can change a corner of the world.",
+    "long": "MetaXuan Coin is a global decentralized asset dedicated to fair resource allocation and transparent charity. Inspired by the mantra 'ॐ मणि पद्मे हूं', we use blockchain to ensure every act of kindness is seen, recorded, and amplified for lasting impact."
+  },
+  "zh-TW": {
+    "btn": "🌍 觀看願景",
+    "short": "傾聽世間的聲音，並以慈悲與智慧，回應每一份需要。",
+    "medium": "玄元幣是一道連接人心的光，讓全球的善意無國界地流動。我們相信，每一份溫柔的力量，都能改變世界的角落。",
+    "long": "玄元幣（MetaXuan Coin）是一項全球性去中心化資產，致力於促進公平的資源分配與慈善透明。我們以六字大明咒「ॐ मणि पद्मे हूं」的精神為靈感，結合區塊鏈技術，讓每一筆善意都被看見、被記錄、被放大，為全球弱勢族群建立可持續支持的能量網絡。"
+  },
+ 
+};
   "en": {
     "start": "Start Transfer",
     "title": "MetaXuan Coin",
