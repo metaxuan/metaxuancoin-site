@@ -230,3 +230,48 @@ button:hover {
     padding: 14px 24px;
   }
 }
+/* 桌機版段落樣式 */
+@media screen and (min-width: 768px) {
+  .vision-section {
+    padding: 48px;
+    max-width: 960px;
+  }
+  .vision-section p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 20px auto;
+  }
+  .vision-short p {
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .vision-medium p {
+    font-style: italic;
+  }
+  .vision-long p {
+    text-align: justify;
+  }
+}
+
+/* 手機版段落樣式 */
+@media screen and (max-width: 480px) {
+  .vision-section {
+    padding: 24px;
+    max-width: 90%;
+  }
+  .vision-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 12px auto;
+  }
+  .vision-short p {
+    font-weight: 600;
+  }
+  .vision-medium p {
+    font-style: normal;
+  }
+  .vision-long p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
