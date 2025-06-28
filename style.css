@@ -53,6 +53,11 @@ body {
   z-index: 5;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   animation: pulseBtn 2s infinite;
+  text-align: center;
+  white-space: normal;   /* ✅ 允許換行 */
+  max-width: 80vw;       /* ✅ 不讓它超過螢幕 */
+  word-break: break-word;/* ✅ 長語言會自動換行 */
+}
 }
 
 #showVisionBtn {
