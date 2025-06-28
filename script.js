@@ -191,7 +191,7 @@ function changeLanguage() {
   currentLang = lang;
   const t = translations[lang] || translations["en"];
   applyVisionTranslation(lang);
-
+  document.getElementById("showVisionBtn").innerText = visionTranslations[lang]?.btn || "🌍 View Vision";
   document.getElementById("startBtn").innerText = t.start;
   document.getElementById("title").innerText = t.title;
   document.getElementById("label-address").innerText = t.address;
