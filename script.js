@@ -335,26 +335,22 @@ function toggleVision() {
 }
 
 function showVision() {
-  function showVision() {
-  document.getElementById('vision').style.display = 'block';
-  document.getElementById('transferSection').style.display = 'none';
-  document.getElementById('startBtn').classList.add('btn-lower');
-  document.getElementById('vision').scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
   const vision = document.getElementById("vision");
   const btn = document.getElementById("showVisionBtn");
+  const body = document.body;
 
   if (vision && btn) {
-    // 切換顯示與隱藏
-    if (vision.style.display === "none" || vision.style.display === "") {
+    const isHidden = vision.style.display === "none" || vision.style.display === "";
+
+    if (isHidden) {
       vision.style.display = "block";
-      vision.scrollIntoView({ behavior: "smooth" });
+      body.classList.add("showing-vision");  // ✅ 願景顯示狀態
       btn.innerText = "🔙 返回 ";
+      vision.scrollIntoView({ behavior: "smooth", block: "center" });
     } else {
       vision.style.display = "none";
+      body.classList.remove("showing-vision");  // ✅ 願景關閉狀態
       btn.innerText = "🌍 觀看願景 ";
     }
   }
 }
-
