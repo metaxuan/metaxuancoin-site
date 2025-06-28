@@ -62,7 +62,7 @@ const translations = {
     "network": "ネットワーク",
     "ethBalance": "ETH 残高",
     "tokenBalance": "MXN 残高"
-  }
+  },
   "ko": {
     "start": "송금 시작",
     "title": "메타쉬안코인",
@@ -359,7 +359,7 @@ function toggleVision() {
   const visionEl = document.getElementById("vision");
   if (visionEl.style.display === "none" || visionEl.style.display === "") {
     visionEl.style.display = "block";
-    applyVisionTranslation(currentLang); // 切換時套用語言
+    changeLanguage(); // 用已定義好的函數重新套用翻譯
   } else {
     visionEl.style.display = "none";
   }
