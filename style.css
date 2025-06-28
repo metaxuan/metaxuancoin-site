@@ -272,12 +272,14 @@ button:hover {
   background: rgba(0, 0, 0, 0.7); /* ✅ 黑色半透明背景 */
   padding: 24px;
   border-radius: 16px;
-  max-width: 90%;
-  margin: 100px auto 60px auto;
+  max-width: 720px;                 /* ✅ 避免行寬過長難以閱讀 */
+  margin: 80px auto 60px auto;      /* ✅ 上下留白 + 置中 */
   color: #FFD700;
   text-align: left;
   animation: fadeInUp 1s ease-out;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.4); /* ✅ 提供浮起感 */
+  word-break: break-word;          /* ✅ 保證單字太長時不溢出 */
+  animation: fadeInUp 1s ease-out;
 }
 
 /* 手機版細部調整 */
