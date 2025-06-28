@@ -62,7 +62,7 @@ const translations = {
     "network": "ネットワーク",
     "ethBalance": "ETH 残高",
     "tokenBalance": "MXN 残高"
-  },
+  }
   "ko": {
     "start": "송금 시작",
     "title": "메타쉬안코인",
@@ -175,30 +175,42 @@ const translations = {
     "ethBalance": "ETH शेष",
     "tokenBalance": "MXN शेष"
   }
-  const visionTranslations = {
+};
+const visionTranslations = {
   "en": {
     "btn": "🌍 View Vision",
     "short": "To listen to the voices of the world with compassion and wisdom.",
-    "medium": "MetaXuan Coin is a bridge of kindness...",
-    "long": "MetaXuan Coin is a global decentralized asset..."
+    "medium": "MetaXuan Coin is a bridge of kindness that transcends borders, empowering individuals to express compassion through decentralized support.",
+    "long": "MetaXuan Coin is a global decentralized asset inspired by compassion and spiritual resonance. It serves not only as a symbol of good intentions but as a real means of exchange within a community driven by benevolence and purpose. With each transfer, a ripple of kindness is created, forming a network of mutual aid, transparency, and global spiritual awakening."
   },
   "zh-TW": {
     "btn": "🌍 觀看願景",
-    "short": "傾聽世間的聲音，並以慈悲與智慧...",
-    "medium": "玄元幣是一道連接人心的光...",
-    "long": "玄元幣（MetaXuan Coin）是一項全球性..."
+    "short": "傾聽世間的聲音，並以慈悲與智慧回應。",
+    "medium": "玄元幣是一道連接人心的光，跨越疆界，讓每個人都能以善意與行動參與全球互助的浪潮。",
+    "long": "玄元幣（MetaXuan Coin）是一項全球去中心化的資產，源於慈悲與靈性共鳴。它不僅是善意的象徵，更是實際可用的交換媒介，建立起一個以利他、透明與靈性覺醒為核心的社群網絡。每一次轉帳，都是一次能量的傳遞與善意的展現。"
   }
 };
-
 let currentLang = "en";
 let selectedAccount = null;
 let web3 = null;
+
 const tokenAddress = "0x8CCAe437408C07A54a1b574894E2C541160Bbfed";
 const tokenABI = [
-  { "constant": true, "inputs": [{"name":"_owner","type":"address"}], "name": "balanceOf", "outputs": [{"name":"balance","type":"uint256"}], "type": "function" },
-  { "constant": true, "inputs": [], "name": "decimals", "outputs": [{"name":"","type":"uint8"}], "type": "function" }
+  {
+    "constant": true,
+    "inputs": [{ "name": "_owner", "type": "address" }],
+    "name": "balanceOf",
+    "outputs": [{ "name": "balance", "type": "uint256" }],
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [{ "name": "", "type": "uint8" }],
+    "type": "function"
+  }
 ];
-
 function changeLanguage() {
   const lang = document.getElementById("language").value;
   currentLang = lang;
@@ -223,8 +235,7 @@ function changeLanguage() {
   document.getElementById("vision-medium").innerText = vt.medium;
   document.getElementById("vision-long").innerText = vt.long;
 
-  updateWalletDisplay(); // 不可省略
-}
+  updateWalletDisplay(); // 更新餘額顯示
 }
 function showTransferSection() {
   document.getElementById("startBtn").style.display = "none";
@@ -236,7 +247,6 @@ function goBack() {
   document.getElementById("transferSection").style.display = "none";
   document.getElementById("startBtn").style.display = "block";
 }
-
 async function connectWallet() {
   if (window.ethereum) {
     try {
@@ -275,7 +285,6 @@ async function updateWalletDisplay() {
     document.getElementById("wallet-balance").innerText = "Error loading balances";
   }
 }
-
 function sendTransaction() {
   const recipient = document.getElementById("recipient").value;
   const amount = document.getElementById("amount").value;
@@ -346,7 +355,6 @@ window.addEventListener("DOMContentLoaded", () => {
   // 點錢包餘額即可連接
   document.getElementById("wallet-balance").addEventListener("click", connectWallet);
 });
-
 function toggleVision() {
   const visionEl = document.getElementById("vision");
   if (visionEl.style.display === "none" || visionEl.style.display === "") {
@@ -372,24 +380,4 @@ function showVision() {
       btn.innerText = "🌍 觀看願景 ";
     }
   }
-}
-
-
-function changeLanguage() {
-  const lang = document.getElementById("language").value;
-  const t = translations[lang] || translations["en"];
-  const vt = visionTranslations[lang] || visionTranslations["en"];
-
-  document.getElementById("startBtn").innerText = t.start;
-  document.getElementById("title").innerText = t.title;
-  document.getElementById("label-address").innerText = t.address;
-  document.getElementById("recipient").placeholder = t.enterAddress;
-  document.getElementById("label-amount").innerText = t.amount;
-  document.getElementById("amount").placeholder = t.enterAmount;
-  document.getElementById("send").innerText = t.send;
-  document.getElementById("back").innerText = `← ${t.back}`;
-  document.getElementById("showVisionBtn").innerText = vt.btn;
-  document.getElementById("vision-short").innerText = vt.short;
-  document.getElementById("vision-medium").innerText = vt.medium;
-  document.getElementById("vision-long").innerText = vt.long;
 }
