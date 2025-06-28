@@ -1,10 +1,11 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans TC', sans-serif;
   background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
-  background-size: cover; /* ✅ 讓整張圖鋪滿背景 */
-  background-color: #000; /* ✅ 若圖片透明區域，顯示黑底 */
+  background-size: cover;
+  background-color: #000;
   height: 100vh;
   color: #FFD700;
   overflow-x: hidden;
@@ -54,20 +55,19 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   animation: pulseBtn 2s infinite;
   text-align: center;
-  white-space: normal;   /* ✅ 允許換行 */
-  max-width: 80vw;       /* ✅ 不讓它超過螢幕 */
-  word-break: break-word;/* ✅ 長語言會自動換行 */
-}
+  white-space: normal;
+  max-width: 80vw;
+  word-break: break-word;
 }
 
 #showVisionBtn {
   font-size: 14px;
   padding: 6px 12px;
-  max-width: 220px;   /* ✅ 縮小寬度 */
+  max-width: 220px;
   width: auto;
   white-space: nowrap;
-  position: absolute; /* ✅ 調整為絕對定位 */
-  top: 10px;           /* ✅ 確保不會擋到語言選單 */
+  position: absolute;
+  top: 10px;
   left: 10px;
   border-radius: 10px;
   z-index: 3;
@@ -147,7 +147,6 @@ button:hover {
   color: #FFD700;
 }
 
-/* ⛔ 錯誤提示樣式 */
 .error-message {
   display: none;
   color: #ff4d4f;
@@ -156,7 +155,6 @@ button:hover {
   animation: shake 0.3s ease-in-out;
 }
 
-/* ✅ 成功提示樣式 */
 .success-message {
   display: none;
   color: #00e676;
@@ -165,7 +163,6 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* ⏳ Loading 樣式 */
 .loading-message {
   display: none;
   color: #ffd700;
@@ -175,7 +172,6 @@ button:hover {
   animation: blink 1.5s linear infinite;
 }
 
-/* 🚨 shake 動畫 */
 @keyframes shake {
   0% { transform: translateX(0); }
   25% { transform: translateX(-6px); }
@@ -184,13 +180,12 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* ✨ blink loading 動畫 */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
-/* 📱 手機版樣式 */
+/* Mobile */
 @media screen and (max-width: 480px) {
   #showVisionBtn {
     font-size: 13px;
@@ -199,7 +194,7 @@ button:hover {
   }
 
   .vision-section {
-    background: rgba(0, 0, 0, 0.7);  /* ✅ 背景半透明 */
+    background: rgba(0, 0, 0, 0.7);
     padding: 16px;
     border-radius: 10px;
     margin: 80px 16px 16px 16px;
@@ -213,8 +208,7 @@ button:hover {
   }
 }
 
-
-/* 🖥️ 桌機版樣式 */
+/* Desktop */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 700px;
@@ -232,75 +226,28 @@ button:hover {
     font-size: 18px;
     padding: 14px 24px;
   }
+
+  .vision-tagline h2 {
+    font-size: 32px;
+  }
 }
 
-/* === 願景段落樣式優化 === */
-
-.vision-short p {
-  font-size: 17px;
-  line-height: 1.6;
-  text-align: left;
-  font-weight: normal;
-}
-
-.vision-medium p {
+/* Vision text layout */
+.vision-short p,
+.vision-medium p,
+.vision-long p {
   font-size: 16px;
   line-height: 1.6;
   text-align: left;
   font-weight: normal;
 }
 
-.vision-long p {
-  font-size: 15px;
-  line-height: 1.6;
-  text-align: left;
-  font-weight: normal;
-}
-
-.vision-tagline h2 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-.vision-tagline p {
-  font-size: 15.5px;
-  text-align: left;
-  line-height: 1.75;
-  margin-align: left;
-}
-.vision-section {
-  background: rgba(0, 0, 0, 0.7); /* ✅ 黑色半透明背景 */
-  padding: 24px;
-  border-radius: 16px;
-  max-width: 720px;                 /* ✅ 避免行寬過長難以閱讀 */
-  margin: 80px auto 60px auto;      /* ✅ 上下留白 + 置中 */
-  color: #FFD700;
-  text-align: left;
-  animation: fadeInUp 1s ease-out;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4); /* ✅ 提供浮起感 */
-  word-break: break-word;          /* ✅ 保證單字太長時不溢出 */
-  animation: fadeInUp 1s ease-out;
-}
-
-/* 手機版細部調整 */
-@media screen and (max-width: 480px) {
-  .vision-section {
-    padding: 16px;
-    margin: 80px 10px 40px 10px;
-    font-size: 14px;
-  }
-}
-/* 願景標語置中樣式：電腦與手機皆適用 */
 .vision-tagline {
   text-align: center;
   margin-bottom: 16px;
 }
 
 .vision-tagline h2 {
-  text-align: center;
   font-size: 20px;
   font-weight: bold;
   line-height: 1.6;
@@ -309,9 +256,21 @@ button:hover {
   color: #FFD700;
 }
 
-/* 桌機字體再稍大一些 */
-@media screen and (min-width: 768px) {
-  .vision-tagline h2 {
-    font-size: 32px;
-  }
+.vision-tagline p {
+  font-size: 15.5px;
+  text-align: left;
+  line-height: 1.75;
+}
+
+.vision-section {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 720px;
+  margin: 80px auto 60px auto;
+  color: #FFD700;
+  text-align: left;
+  animation: fadeInUp 1s ease-out;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+  word-break: break-word;
 }
