@@ -23,8 +23,13 @@
       <option value="fr">🇫🇷 Français</option>
       <option value="de">🇩🇪 Deutsch</option>
       <option value="hi">🇮🇳 हिन्दी</option>
-      <option value="zh-TW">🇹🇼 繁體中文</option>
+      <option value="zh-TW" selected>🇹🇼 繁體中文</option>
     </select>
+  </div>
+
+  <!-- 初始按鈕 -->
+  <div class="start-container">
+    <button type="button" id="startBtn" onclick="showTransferSection()">開始轉帳</button>
   </div>
 
   <!-- 轉帳區塊 -->
@@ -48,13 +53,15 @@
     <p id="wallet-balance"></p>
 
     <!-- 提示訊息 -->
-    <p id="transfer-error" class="error-message">❌ 地址錯誤 / Invalid address</p>
-    <p id="transfer-loading" class="loading-message">⏳ 轉帳處理中，請稍候...</p>
-    <p id="transfer-success" class="success-message">✅ 模擬轉帳成功！</p>
+    <p id="transfer-error" class="error-message" style="display:none;">❌ 地址錯誤 / Invalid address</p>
+    <p id="transfer-loading" class="loading-message" style="display:none;">⏳ 轉帳處理中，請稍候...</p>
+    <p id="transfer-success" class="success-message" style="display:none;">✅ 模擬轉帳成功！</p>
   </div>
 
   <!-- 願景按鈕 -->
-  <button id="showVisionBtn" onclick="showVision()">🌍 觀看願景</button>
+  <div class="vision-button">
+    <button id="showVisionBtn" onclick="showVision()">🌍 觀看願景</button>
+  </div>
 
   <!-- 願景區塊 -->
   <section id="vision" class="vision-section" style="display: none;">
@@ -68,9 +75,6 @@
       <p id="vision-long"></p>
     </div>
   </section>
-  
-  <!-- 起始按鈕 -->
-  <button type="button" id="startBtn" onclick="showTransferSection()">開始轉帳</button>
 
   <!-- JS 載入 -->
   <script src="script.js"></script>
