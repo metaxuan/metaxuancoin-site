@@ -41,7 +41,7 @@ body {
 
 #startBtn {
   position: absolute;
-  bottom: 32px;
+  bottom: 48px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, #ffd700, #ffaa00);
