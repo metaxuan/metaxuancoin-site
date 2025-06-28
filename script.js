@@ -1,1 +1,0 @@
-<your full script.js content here>
