@@ -175,6 +175,19 @@ const translations = {
     "ethBalance": "ETH शेष",
     "tokenBalance": "MXN शेष"
   }
+  const visionTranslations = {
+  "en": {
+    "btn": "🌍 View Vision",
+    "short": "To listen to the voices of the world with compassion and wisdom.",
+    "medium": "MetaXuan Coin is a bridge of kindness...",
+    "long": "MetaXuan Coin is a global decentralized asset..."
+  },
+  "zh-TW": {
+    "btn": "🌍 觀看願景",
+    "short": "傾聽世間的聲音，並以慈悲與智慧...",
+    "medium": "玄元幣是一道連接人心的光...",
+    "long": "玄元幣（MetaXuan Coin）是一項全球性..."
+  }
 };
 
 let currentLang = "en";
@@ -189,8 +202,11 @@ const tokenABI = [
 function changeLanguage() {
   const lang = document.getElementById("language").value;
   currentLang = lang;
-  const t = translations[lang] || translations["en"];
 
+  const t = translations[lang] || translations["en"];
+  const vt = visionTranslations[lang] || visionTranslations["en"];
+
+  // 一般介面翻譯
   document.getElementById("startBtn").innerText = t.start;
   document.getElementById("title").innerText = t.title;
   document.getElementById("label-address").innerText = t.address;
@@ -199,10 +215,17 @@ function changeLanguage() {
   document.getElementById("amount").placeholder = t.enterAmount;
   document.getElementById("send").innerText = t.send;
   document.getElementById("back").innerText = `← ${t.back}`;
+  document.getElementById("wallet-balance").innerText = t.connect;
 
-  updateWalletDisplay();
+  // 願景翻譯
+  document.getElementById("showVisionBtn").innerText = vt.btn;
+  document.getElementById("vision-short").innerText = vt.short;
+  document.getElementById("vision-medium").innerText = vt.medium;
+  document.getElementById("vision-long").innerText = vt.long;
+
+  updateWalletDisplay(); // 不可省略
 }
-
+}
 function showTransferSection() {
   document.getElementById("startBtn").style.display = "none";
   document.getElementById("transferSection").style.display = "block";
@@ -350,20 +373,7 @@ function showVision() {
     }
   }
 }
-const visionTranslations = {
-  "en": {
-    "btn": "🌍 View Vision",
-    "short": "To listen to the voices of the world with compassion and wisdom.",
-    "medium": "MetaXuan Coin is a bridge of kindness...",
-    "long": "MetaXuan Coin is a global decentralized asset..."
-  },
-  "zh-TW": {
-    "btn": "🌍 觀看願景",
-    "short": "傾聽世間的聲音，並以慈悲與智慧...",
-    "medium": "玄元幣是一道連接人心的光...",
-    "long": "玄元幣（MetaXuan Coin）是一項全球性..."
-  }
-};
+
 
 function changeLanguage() {
   const lang = document.getElementById("language").value;
@@ -382,12 +392,4 @@ function changeLanguage() {
   document.getElementById("vision-short").innerText = vt.short;
   document.getElementById("vision-medium").innerText = vt.medium;
   document.getElementById("vision-long").innerText = vt.long;
-}
-
-function showVision() {
-  const vision = document.getElementById("vision");
-  const btn = document.getElementById("showVisionBtn");
-  const isHidden = vision.style.display === "none" || vision.style.display === "";
-  vision.style.display = isHidden ? "block" : "none";
-  changeLanguage(); // Refresh content
 }
