@@ -365,4 +365,10 @@ function showVision() {
     }
   }
 }
-
+function applyVisionTranslation(lang) {
+  const vt = visionTranslations[lang] || visionTranslations["en"];
+  document.getElementById("showVisionBtn").innerText = vt.btn;
+  document.querySelector(".vision-short p").innerText = vt.short;
+  document.querySelector(".vision-medium p").innerText = vt.medium;
+  document.querySelector(".vision-long p").innerText = vt.long;
+}
