@@ -36,13 +36,15 @@ body {
 
 /* 👉 語言選單 */
 #language {
-  
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 6px;
 }
+
 /* === 開始轉帳按鈕 & 願景按鈕樣式 === */
 #startBtn,
-#showVisionBtn {
-  display: block;
-  margin: 20px auto;
+#visionBtn {
+  display: inline-block;
   background: linear-gradient(to right, #ffd700, #ffaa00);
   color: black;
   font-size: 16px;
@@ -50,18 +52,18 @@ body {
   border: none;
   border-radius: 10px;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   text-align: center;
-  max-width: 80vw;
-  white-space: normal;
-  word-break: break-word;
+  max-width: 40vw;
+  white-space: nowrap;
+  word-break: keep-all;
   animation: pulseBtn 2s infinite;
   transition: background 0.3s ease;
 }
 
 /* ✨ 滑入變色 */
 #startBtn:hover,
-#showVisionBtn:hover {
+#visionBtn:hover {
   background: linear-gradient(to right, #ffcc00, #ff8800);
 }
 
@@ -70,13 +72,22 @@ body {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
+/* === 按鈕容器排列 === */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
 /* === 容器樣式（含轉帳區）=== */
 .container {
   background: rgba(0, 0, 0, 0.65);
   padding: 32px 24px;
   border-radius: 12px;
   max-width: 90%;
-  margin: 80px auto;
+  margin: 100px auto 40px auto;
   text-align: center;
   animation: fadeInUp 1s ease-out;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
@@ -99,13 +110,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  text-align: left;
 }
-
 .input-group label {
   margin-bottom: 6px;
   font-size: 16px;
   color: #FFD700;
-  text-align: left;
   padding-left: 4px;
 }
 /* === 輸入欄位樣式 === */
@@ -137,22 +147,6 @@ button {
 
 button:hover {
   background: linear-gradient(to right, #ffcc00, #ff8800);
-}
-
-/* 📱 響應式：讓 input 與 button 佔滿寬度 */
-@media screen and (max-width: 480px) {
-  input, button {
-    width: 100%;
-    font-size: 15px;
-  }
-}
-/* === 按鈕容器：左右並排（桌機版） === */
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
 
 /* === 錢包餘額樣式 === */
@@ -191,10 +185,6 @@ button:hover {
   margin-top: 10px;
   animation: blink 1.5s linear infinite;
 }
-<div class="button-row">
-  <button id="send">轉帳</button>
-  <button id="back">← 返回</button>
-</div>
 /* === 動畫區塊 === */
 
 /* 📌 共用淡入動畫 */
@@ -211,8 +201,8 @@ button:hover {
 
 /* 📌 按鈕閃動放大動畫 */
 @keyframes pulseBtn {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.05); }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 /* 📌 錯誤提示抖動動畫 */
@@ -229,121 +219,14 @@ button:hover {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
+
 /* === 📱 手機版樣式（寬度 ≦ 480px）=== */
 @media screen and (max-width: 480px) {
-  #showVisionBtn {
-    font-size: 13px;
-    padding: 6px 12px;
-    max-width: 200px;
+  input, button {
+    width: 100%;
+    font-size: 15px;
   }
 
-  .vision-section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 16px;
-    border-radius: 10px;
-    margin: 100px 16px 16px 16px;
-    text-align: left;
-  }
-
-  .vision-section p {
-    font-size: 15.5px;
-    line-height: 1.75;
-    margin-bottom: 12px;
-  }
-}
-
-/* === 🖥️ 桌機版樣式（寬度 ≧ 768px）=== */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 700px;
-    margin-top: 100px;
-    padding: 32px 48px;
-    border-radius: 16px;
-  }
-
-  input {
-    font-size: 18px;
-    padding: 14px 18px;
-  }
-
-  button {
-    font-size: 18px;
-    padding: 14px 24px;
-  }
-
-  .vision-tagline h2 {
-    font-size: 32px;
-  }
-
-  .vision-section {
-    margin-top: 120px;
-  }
-}
-/* === 📱 手機版樣式（寬度 ≦ 480px）=== */
-@media screen and (max-width: 480px) {
-  #showVisionBtn {
-    font-size: 13px;
-    padding: 6px 12px;
-    max-width: 200px;
-  }
-
-  .vision-section {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 16px;
-    border-radius: 10px;
-    margin: 100px 16px 16px 16px;
-    text-align: left;
-  }
-
-  .vision-section p {
-    font-size: 15.5px;
-    line-height: 1.75;
-    margin-bottom: 12px;
-  }
-}
-
-/* === 🖥️ 桌機版樣式（寬度 ≧ 768px）=== */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 700px;
-    margin-top: 100px;
-    padding: 32px 48px;
-    border-radius: 16px;
-  }
-
-  input {
-    font-size: 18px;
-    padding: 14px 18px;
-  }
-
-  button {
-    font-size: 18px;
-    padding: 14px 24px;
-  }
-
-  .vision-tagline h2 {
-    font-size: 32px;
-  }
-
-  .vision-section {
-    margin-top: 120px;
-  }
-}
-/* === 雙欄輸入排版（桌機用） === */
-.input-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.input-group {
-  flex: 1 1 48%;
-  min-width: 260px;
-}
-@media screen and (max-width: 480px) {
   #showVisionBtn {
     font-size: 13px;
     padding: 6px 12px;
@@ -372,7 +255,7 @@ button:hover {
     width: 100%;
   }
 }
-
+/* === 🖥️ 桌機版樣式（寬度 ≧ 768px）=== */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 700px;
@@ -399,6 +282,8 @@ button:hover {
     margin-top: 120px;
   }
 }
+
+/* === 願景文樣式區塊 === */
 .vision-short p,
 .vision-medium p,
 .vision-long p {
@@ -441,28 +326,15 @@ button:hover {
   word-break: break-word;
   padding-top: 60px;
 }
+
 /* 📌 願景模式調整（需搭配 JS 操作 body class） */
 body.showing-vision #startBtn {
-  bottom: 20px; /* ✅ 開始轉帳再往下 */
+  bottom: 20px;
 }
 
 body.showing-vision #back {
   position: fixed;
-  top: 12px;     /* ✅ 往上靠近畫面上緣 */
+  top: 12px;
   left: 12px;
-  z-index: 20;   /* ✅ 優先顯示層級 */
-}
-.input-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-  margin: 20px auto;
-  max-width: 720px;
-}
-
-.input-group {
-  flex: 1 1 320px;
-  min-width: 280px;
-  text-align: left;
+  z-index: 20;
 }
