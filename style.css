@@ -40,8 +40,8 @@ body {
 }
 
 #startBtn {
-  display: block;
-  margin: 80px auto 0 auto; /* 頂部 80px，左右置中 */
+  margin-top: 16px;
+  display: inline-block;
   background: linear-gradient(to right, #ffd700, #ffaa00);
   color: black;
   font-size: 16px;
@@ -49,18 +49,16 @@ body {
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  z-index: 5;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   animation: pulseBtn 2s infinite;
   text-align: center;
   white-space: normal;
   max-width: 80vw;
   word-break: break-word;
-  position: relative;  /* ❗️改為 relative 或移除 */
-  top: 40vh; /* 視窗高度的 40%，你可微調 */
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: auto;        /* ❗️移除固定底部 */
+
+  /* ✅ 取消浮動定位 */
+  position: static;
+  transform: none;
 }
 
 #showVisionBtn {
