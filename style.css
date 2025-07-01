@@ -36,9 +36,7 @@ body {
 
 /* 👉 語言選單 */
 #language {
-  font-size: 14px;
-  padding: 4px 6px;
-  border-radius: 6px;
+  
 }
 /* === 開始轉帳按鈕 & 願景按鈕樣式 === */
 #startBtn,
