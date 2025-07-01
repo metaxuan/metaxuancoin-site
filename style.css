@@ -40,10 +40,8 @@ body {
 }
 
 #startBtn {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: 80px auto 0 auto; /* 頂部 80px，左右置中 */
   background: linear-gradient(to right, #ffd700, #ffaa00);
   color: black;
   font-size: 16px;
@@ -58,6 +56,10 @@ body {
   white-space: normal;
   max-width: 80vw;
   word-break: break-word;
+  position: relative; /* ❗️改為 relative 或移除 */
+  transform: none;     /* ❗️移除 translateX(-50%) */
+  left: auto;          /* ❗️移除固定左邊 */
+  bottom: auto;        /* ❗️移除固定底部 */
 }
 
 #showVisionBtn {
