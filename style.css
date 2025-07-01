@@ -1,3 +1,4 @@
+/* === Global 設定與背景 === */
 body {
   margin: 0;
   padding: 0;
@@ -10,10 +11,14 @@ body {
   overflow-x: hidden;
   animation: fadeIn 1.2s ease-in-out;
 }
+
+/* 🌀 頁面淡入動畫 */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+/* === 語言選單區域（Top Bar）=== */
 .top-bar {
   position: fixed;
   top: 10px;
@@ -28,83 +33,87 @@ body {
   border-radius: 12px;
   flex-wrap: wrap;
 }
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
 
+/* 👉 語言選單 */
 #language {
   font-size: 14px;
   padding: 4px 6px;
   border-radius: 6px;
 }
-#startBtn {
-  margin-top: 16px;
-  display: inline-block;
+/* === 開始轉帳按鈕 & 願景按鈕樣式 === */
+#startBtn,
+#showVisionBtn {
+  display: block;
+  margin: 20px auto;
   background: linear-gradient(to right, #ffd700, #ffaa00);
   color: black;
   font-size: 16px;
   padding: 12px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  animation: pulseBtn 2s infinite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   text-align: center;
-  white-space: normal;
   max-width: 80vw;
+  white-space: normal;
   word-break: break-word;
-
-  /* ✅ 取消浮動定位 */
-  position: static;
-  transform: none;
+  animation: pulseBtn 2s infinite;
+  transition: background 0.3s ease;
 }
 
-#showVisionBtn,
-#startBtn {
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-@keyframes pulseBtn {
-  0%, 100% { transform: translateX(-50%) scale(1); }
-  50% { transform: translateX(-50%) scale(1.05); }
-}
-
-#startBtn:hover {
+/* ✨ 滑入變色 */
+#startBtn:hover,
+#showVisionBtn:hover {
   background: linear-gradient(to right, #ffcc00, #ff8800);
 }
+
+/* 💫 脈動動畫 */
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+/* === 容器樣式（含轉帳區）=== */
 .container {
   background: rgba(0, 0, 0, 0.65);
-  padding: 24px;
+  padding: 32px 24px;
   border-radius: 12px;
   max-width: 90%;
   margin: 80px auto;
   text-align: center;
   animation: fadeInUp 1s ease-out;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-h1 {
-  font-size: 26px;
-  margin-bottom: 24px;
+/* 📤 雙欄輸入排版 */
+.input-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-top: 16px;
+/* 🧱 單一輸入欄位樣式 */
+.input-group {
+  flex: 1 1 300px;
+  max-width: 360px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-group label {
   margin-bottom: 6px;
   font-size: 16px;
+  color: #FFD700;
+  text-align: left;
+  padding-left: 4px;
 }
-
+/* === 輸入欄位樣式 === */
 input {
   width: 100%;
-  max-width: 320px;
   padding: 12px 16px;
-  margin: 10px auto;
   border: 1px solid #FFD700;
   border-radius: 10px;
   background: rgba(255,255,255,0.1);
@@ -112,6 +121,8 @@ input {
   font-size: 16px;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
 }
+
+/* === 按鈕樣式統一 === */
 button {
   padding: 12px 20px;
   margin: 10px 8px 0;
@@ -123,11 +134,30 @@ button {
   font-size: 16px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 button:hover {
   background: linear-gradient(to right, #ffcc00, #ff8800);
 }
+
+/* 📱 響應式：讓 input 與 button 佔滿寬度 */
+@media screen and (max-width: 480px) {
+  input, button {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+/* === 按鈕容器：左右並排（桌機版） === */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* === 錢包餘額樣式 === */
 #wallet-balance {
   margin-top: 16px;
   font-size: 14px;
@@ -136,6 +166,7 @@ button:hover {
   color: #FFD700;
 }
 
+/* === 錯誤提示樣式 === */
 .error-message {
   display: none;
   color: #ff4d4f;
@@ -144,6 +175,7 @@ button:hover {
   animation: shake 0.3s ease-in-out;
 }
 
+/* === 成功提示樣式 === */
 .success-message {
   display: none;
   color: #00e676;
@@ -152,6 +184,7 @@ button:hover {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* === Loading 提示樣式 === */
 .loading-message {
   display: none;
   color: #ffd700;
@@ -160,38 +193,45 @@ button:hover {
   margin-top: 10px;
   animation: blink 1.5s linear infinite;
 }
-#wallet-balance {
-  margin-top: 16px;
-  font-size: 14px;
-  text-decoration: underline;
-  cursor: pointer;
-  color: #FFD700;
+<div class="button-row">
+  <button id="send">轉帳</button>
+  <button id="back">← 返回</button>
+</div>
+/* === 動畫區塊 === */
+
+/* 📌 共用淡入動畫 */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.error-message {
-  display: none;
-  color: #ff4d4f;
-  font-weight: bold;
-  margin-top: 10px;
-  animation: shake 0.3s ease-in-out;
+/* 📌 區塊自下往上淡入 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.success-message {
-  display: none;
-  color: #00e676;
-  font-weight: bold;
-  margin-top: 10px;
-  animation: fadeIn 0.5s ease-in-out;
+/* 📌 按鈕閃動放大動畫 */
+@keyframes pulseBtn {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
 }
 
-.loading-message {
-  display: none;
-  color: #ffd700;
-  font-style: italic;
-  font-weight: bold;
-  margin-top: 10px;
-  animation: blink 1.5s linear infinite;
+/* 📌 錯誤提示抖動動畫 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
 }
+
+/* 📌 Loading 閃爍動畫 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+/* === 📱 手機版樣式（寬度 ≦ 480px）=== */
 @media screen and (max-width: 480px) {
   #showVisionBtn {
     font-size: 13px;
@@ -213,6 +253,128 @@ button:hover {
     margin-bottom: 12px;
   }
 }
+
+/* === 🖥️ 桌機版樣式（寬度 ≧ 768px）=== */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    margin-top: 100px;
+    padding: 32px 48px;
+    border-radius: 16px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+
+  .vision-tagline h2 {
+    font-size: 32px;
+  }
+
+  .vision-section {
+    margin-top: 120px;
+  }
+}
+/* === 📱 手機版樣式（寬度 ≦ 480px）=== */
+@media screen and (max-width: 480px) {
+  #showVisionBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+    max-width: 200px;
+  }
+
+  .vision-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 16px;
+    border-radius: 10px;
+    margin: 100px 16px 16px 16px;
+    text-align: left;
+  }
+
+  .vision-section p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+}
+
+/* === 🖥️ 桌機版樣式（寬度 ≧ 768px）=== */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    margin-top: 100px;
+    padding: 32px 48px;
+    border-radius: 16px;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+
+  .vision-tagline h2 {
+    font-size: 32px;
+  }
+
+  .vision-section {
+    margin-top: 120px;
+  }
+}
+/* === 雙欄輸入排版（桌機用） === */
+.input-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.input-group {
+  flex: 1 1 48%;
+  min-width: 260px;
+}
+@media screen and (max-width: 480px) {
+  #showVisionBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+    max-width: 200px;
+  }
+
+  .vision-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 16px;
+    border-radius: 10px;
+    margin: 100px 16px 16px 16px;
+    text-align: left;
+  }
+
+  .vision-section p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .input-grid {
+    flex-direction: column;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 700px;
@@ -267,6 +429,7 @@ button:hover {
   text-align: left;
   line-height: 1.75;
 }
+
 .vision-section {
   background: rgba(0, 0, 0, 0.7);
   padding: 24px;
@@ -280,7 +443,6 @@ button:hover {
   word-break: break-word;
   padding-top: 60px;
 }
-
 /* 📌 願景模式調整（需搭配 JS 操作 body class） */
 body.showing-vision #startBtn {
   bottom: 20px; /* ✅ 開始轉帳再往下 */
@@ -291,4 +453,18 @@ body.showing-vision #back {
   top: 12px;     /* ✅ 往上靠近畫面上緣 */
   left: 12px;
   z-index: 20;   /* ✅ 優先顯示層級 */
+}
+.input-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 720px;
+}
+
+.input-group {
+  flex: 1 1 320px;
+  min-width: 280px;
+  text-align: left;
 }
