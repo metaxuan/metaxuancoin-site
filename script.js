@@ -200,6 +200,12 @@ function changeLanguage() {
   document.getElementById("send").innerText = t.send;
   document.getElementById("back").innerText = `← ${t.back}`;
 
+  const v = visionTranslations[lang] || visionTranslations["en"];
+  document.getElementById("showVisionBtn").innerText = v.visionBtn;
+  document.getElementById("vision-short").innerText = v.vision.short;
+  document.getElementById("vision-medium").innerText = v.vision.medium;
+  document.getElementById("vision-long").innerText = v.vision.long;
+
   updateWalletDisplay();
 }
 
@@ -328,7 +334,6 @@ function toggleVision() {
   const visionEl = document.getElementById("vision");
   if (visionEl.style.display === "none" || visionEl.style.display === "") {
     visionEl.style.display = "block";
-    applyVisionTranslation(currentLang); // 切換時套用語言
   } else {
     visionEl.style.display = "none";
   }
@@ -343,16 +348,13 @@ function showVision() {
     if (vision.style.display === "none" || vision.style.display === "") {
       vision.style.display = "block";
       vision.scrollIntoView({ behavior: "smooth" });
-      btn.innerText = "🔙 返回 ";
+      btn.innerText = `🔙 ${translations[currentLang].back} `;
     } else {
       vision.style.display = "none";
-      btn.innerText = "🌍 觀看願景 ";
+      btn.innerText = `${visionTranslations[currentLang].visionBtn} `;
     }
   }
 }
-
-
-
 
 const visionTranslations = {
   "en": {
@@ -392,7 +394,7 @@ const visionTranslations = {
     "vision": {
       "short": "세상의 목소리에 귀 기울이고, 자비와 지혜로 응답합니다.",
       "medium": "메타쉬안코인은 사람들의 마음을 연결하는 빛이며, 선의가 국경을 초월해 흐르게 합니다. 우리는 부드러운 힘이 세상을 바꿀 수 있다고 믿습니다.",
-      "long": "MetaXuan Coin은 '옴 마니 파드मे 훔'의 정신에서 영감을 받은 글로벌 분산형 자산으로, 블록체인 기술을 통해 공정한 자원 분배와 자선 투명성을 촉진합니다."
+      "long": "MetaXuan Coin은 '옴 마니 파드메 훔'의 정신에서 영감을 받은 글로벌 분산형 자산으로, 블록체인 기술을 통해 공정한 자원 분배와 자선 투명성을 촉진합니다."
     }
   },
   "es": {
@@ -444,13 +446,3 @@ const visionTranslations = {
     }
   }
 };
-
-
-
-// 願景翻譯套用
-if (visionTranslations[currentLang]) {
-  document.getElementById("showVisionBtn").innerText = visionTranslations[currentLang].visionBtn;
-  document.getElementById("vision-short").innerText = visionTranslations[currentLang].vision.short;
-  document.getElementById("vision-medium").innerText = visionTranslations[currentLang].vision.medium;
-  document.getElementById("vision-long").innerText = visionTranslations[currentLang].vision.long;
-}
