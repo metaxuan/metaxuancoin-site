@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MetaXuan Coin</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 📦 上方控制列：語言選單 + 願景 + 開始 -->
+ <div class="top-controls">
+  <div class="button-group">
+    <select id="language" onchange="changeLanguage()">
+      <option value="en">🌍 English</option>
+      <option value="zh-CN">🌍 简体中文</option>
+      <option value="ja">🌍 日本語</option>
+      <option value="ko">🌍 한국어</option>
+      <option value="es">🌍 Español</option>
+      <option value="th">🌍 ภาษาไทย</option>
+      <option value="vi">🌍 Tiếng Việt</option>
+      <option value="fr">🌍 Français</option>
+      <option value="de">🌍 Deutsch</option>
+      <option value="hi">🌍 हिन्दी</option>
+      <option value="zh-TW" selected>🌍 繁體中文</option>
+  </select>
+
+  <button id="startBtn" onclick="showTransferSection()">開始轉帳</button>
+  <button id="visionBtn" onclick="showVision()">觀看願景</button>
+ </div>
+</div>
+    <!-- 💸 轉帳區塊 -->
+  <div class="container" id="transferSection" style="display: none;">
+    <h1 id="title">玄元幣</h1>
+
+    <div class="input-grid">
+      <div class="input-group">
+        <label id="label-address">接收地址</label>
+        <input type="text" id="recipient" placeholder="請輸入接收地址">
+      </div>
+      <div class="input-group">
+        <label id="label-amount">轉帳金額</label>
+        <input type="number" id="amount" placeholder="請輸入金額">
+      </div>
+    </div>
+
+    <button type="button" id="send" onclick="sendTransaction()">轉帳</button>
+    <button type="button" id="back" onclick="goBack()">← 返回</button>
+
+    <p id="wallet-balance"></p>
+
+    <!-- 提示訊息 -->
+    <p id="transfer-error" class="error-message" style="display:none;">❌ 地址錯誤 / Invalid address</p>
+    <p id="transfer-loading" class="loading-message" style="display:none;">⏳ 轉帳處理中，請稍候...</p>
+    <p id="transfer-success" class="success-message" style="display:none;">✅ 模擬轉帳成功！</p>
+  </div>
+
+  <!-- 🌍 願景區塊 -->
+  <section id="vision" class="vision-section" style="display: none;">
+    <div class="vision-tagline">
+      <h2 id="vision-short"></h2>
+    </div>
+    <div class="vision-medium">
+      <p id="vision-medium"></p>
+    </div>
+    <div class="vision-long">
+      <p id="vision-long"></p>
+    </div>
+  </section>
+    <!-- JS 載入 -->
+  <script src="script.js"></script>
+</body>
+</html>
+  
