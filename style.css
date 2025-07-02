@@ -1,0 +1,285 @@
+/* === Global 設定與背景 === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: url('assets/metaxuan_logo.png') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000;
+  height: 100vh;
+  color: #FFD700;
+  overflow-x: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* 🌀 頁面淡入動畫 */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === 語言選單區域（Top Bar）=== */
+.top-bar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+#language {
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 6px;
+}它
+/* 👉 語言選單 */
+#language {
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+/* === 開始轉帳 / 願景按鈕樣式 === */
+#startBtn,
+#visionBtn {
+  display: inline-block;
+  margin: 20px 10px 0;
+  background: linear-gradient(to right, #ffd700, #ffaa00);
+  color: black;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 80vw;
+  white-space: normal;
+  word-break: break-word;
+  animation: pulseBtn 2s infinite;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+#startBtn:hover,
+#visionBtn:hover {
+  background: linear-gradient(to right, #ffcc00, #ff8800);
+}
+
+@keyframes pulseBtn {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 🖥️ 桌機版 Button 並排 */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* === 容器 & 轉帳區樣式 === */
+.container {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 32px 24px;
+  border-radius: 12px;
+  max-width: 90%;
+  margin: 80px auto;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 📤 雙欄輸入排版 */
+.input-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+/* 🧱 單一輸入欄位樣式 */
+.input-group {
+  flex: 1 1 300px;
+  min-width: 260px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #FFD700;
+  text-align: left;
+  padding-left: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 16px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+
+
+/* === 提示訊息樣式 === */
+#wallet-balance {
+  margin-top: 16px;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #FFD700;
+}
+.error-message {
+  display: none;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: shake 0.3s ease-in-out;
+}
+.success-message {
+  display: none;
+  color: #00e676;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.loading-message {
+  display: none;
+  color: #ffd700;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: blink 1.5s linear infinite;
+}
+/* === 動畫區塊 === */
+
+/* 📌 共用淡入動畫 */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 📌 區塊由下往上淡入 */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📌 抖動提示 */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+/* 📌 Loading 閃爍動畫 */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* 📱 手機版調整 */
+@media screen and (max-width: 480px) {
+  input, button {
+    width: 100%;
+    font-size: 15px;
+  }
+  .input-grid {
+    flex-direction: column;
+  }
+}
+
+/* 🖥️ 桌機版調整 */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    margin-top: 100px;
+    padding: 32px 48px;
+    border-radius: 16px;
+  }
+  input {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+  button {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+  .vision-section {
+    margin-top: 120px;
+  }
+}
+/* === 願景文樣式區塊 === */
+.vision-short p,
+.vision-medium p,
+.vision-long p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  font-weight: normal;
+}
+
+.vision-tagline {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.vision-tagline h2 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin: 0 auto;
+  display: inline-block;
+  color: #FFD700;
+}
+
+.vision-tagline p {
+  font-size: 15.5px;
+  text-align: left;
+  line-height: 1.75;
+}
+
+.vision-section {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 24px;
+  border-radius: 16px;
+  max-width: 720px;
+  margin: 100px auto 60px auto;
+  color: #FFD700;
+  text-align: left;
+  animation: fadeInUp 1s ease-out;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+  word-break: break-word;
+  padding-top: 60px;
+}
+
+/* 📌 願景模式調整（需搭配 JS 操作 body class） */
+body.showing-vision #startBtn {
+  bottom: 20px;
+}
+
+body.showing-vision #back {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+}
